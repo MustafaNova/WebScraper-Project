@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Home</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/mainContent.css">
+  <link rel="stylesheet" href="./css/navBar.css">
+  <link rel="stylesheet" href="./css/style.css">
+  
+ 
+  
+</head>
+<body style="background-color: rgb(236, 235, 235);display:flex;justify-content:center;flex-direction:column">
+
+  <!-- with adding 'activated' the browser will get black (used when opening menus)-->
+  <div class="overlay"></div>
+
+  <!--NavBar-->
+  <div class="navBarColor">
+
+    <div class="navBar">
+
+      <div style="width:98%">
+        
+        <!--First Layer-->
+        <div class="firstLayer">
+
+          <i class="fa-solid fa-bars smallScreenBars"></i>
+
+          <!--Logo-->  
+          <img class="navBarLogo" src="https://cms-images.mmst.eu/fw7ws5lvie5f/57IGhBCsgc3X02EX1EFqyN/e7d3e1b61d0a29d5e84290660e0d10df/MMS_Logo_outline.svg?q=80" alt="">
+          
+          <!--Searchbar-->
+          <div class="navBar_searchbar">
+
+            <!--Input-->
+            <i class="fa-solid fa-magnifying-glass cursorPointer"></i>
+            <input class="navBar_input"  type="text">
+
+            <!--Placeholder for Input-->
+            <p class="navBarPlaceholder">Was suchst du?</p>
+            <i class="fa-solid fa-filter filterBtn" id="openCloseFilterBtn"></i>
+
+          </div>
+
+
+          <!--rotating-Box-->
+          <div class="cube-container">
+
+            <!--All Options -->
+            <div class="cube">
+
+              <div class="face">
+                <!--current Option-->
+                <span>text1</span>
+
+                <!--navigation with arrows-->
+                <div class="navBarArrowUp">
+                <i class="fa-solid fa-arrow-up transparent" id="cubeArrUp1"></i>
+                </div>
+
+                <div class="navBarArrowDown">       
+                <i class="fa-solid fa-arrow-down transparent" id="cubeArrDown1"></i>
+                </div>
+
+              </div>
+
+              <div class="face">
+                <!--current Option-->
+                <span>text2</span>
+
+                <!--navigation with arrows-->
+                <div class="navBarArrowUp">
+                <i class="fa-solid fa-arrow-up transparent" id="cubeArrUp2"></i>
+                </div>
+
+                <div class="navBarArrowDown">       
+                <i class="fa-solid fa-arrow-down transparent" id="cubeArrDown2"></i>
+                </div>
+              </div>
+
+              <div class="face">
+                <!--current Option-->
+                <span>text3</span>
+
+                <!--navigation with arrows-->
+                <div class="navBarArrowUp">
+                <i class="fa-solid fa-arrow-up transparent" id="cubeArrUp3"></i>
+                </div>
+
+                <div class="navBarArrowDown">       
+                <i class="fa-solid fa-arrow-down transparent" id="cubeArrDown3"></i>
+                </div>
+              </div>
+
+              <div class="face">
+                <!--current Option-->
+                <span>text4</span>
+
+                <!--navigation with arrows-->
+                <div class="navBarArrowUp">
+                <i class="fa-solid fa-arrow-up transparent" id="cubeArrUp4"></i>
+                </div>
+
+                <div class="navBarArrowDown">       
+                <i class="fa-solid fa-arrow-down transparent" id="cubeArrDown4"></i>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        
+          <div class="navBarGoToContainer">
+
+            <!--account-->
+            <button class="navBarGoTo" id="accOpenBtn"><i class="fa-solid fa-circle-user"></i></button>
+
+            <!--favorite list-->
+            <button class="navBarGoTo"><i class="fa-solid fa-heart"></i></button>
+
+            <!--shopping bag-->
+            <button class="navBarGoTo"><i class="fa-solid fa-cart-shopping"></i></button>
+
+          </div>  
+
+        </div>
+
+        <!--Second Layer-->
+        <div class="secondLayer">
+      
+          <!--menuBtn-->
+          <div class="OuternavBarMenu" id="NB_menuBtn">
+            <div class="navBarMenu">
+              <i class="fa-solid fa-bars barsImage"></i>
+              <span style="font-weight: 700; color: rgb(58, 58, 58)">Menü</span>
+            </div>
+          </div>
+          
+          <!--menubar-->    
+          <div class="Outer" id="NB_menubar">
+      
+            <!--left Arrow-->
+            <i class="fa-solid fa-angle-left leftArr unvisible noPointer" id="leftArr"></i>
+
+            <div class="Outermenubar">
+              <ul class="menubar" role="menubar">
+                <li class="menubarFI item">Computer + Tablet</li> <!--menubar-first-item-->
+                <li class="item">Smartphones</li>
+                <li class="item">TV + Beamer</li>
+                <li class="item">Küche</li>
+                <li class="item">Haushalt + Garten</li>
+                <li class="item">Gaming + VR</li>
+                <li class="item">Audio</li>
+                <li class="item">Spielzeug + Freizeit</li>
+                <li class="item">Büro + Homeoffice</li>
+                <li class="item">Smart Home</li>
+                <li class="item" style="font-size:14px">|</li>
+                <li class="item">Angebote</li> <!--menubar-second-last-item-->
+                <li class="item">Über uns</li> <!--menubar-last-item-->
+              </ul>
+            </div>
+
+            <!--right Arrow-->
+            <i class="fa-solid fa-angle-right rightArr visible" id="rightArr"></i>
+          </div>  
+
+        </div>
+
+      </div>
+
+      <!--account Slide-->    
+      <div class="accountSlide" id="accountSlide">
+
+        <!--headline-->
+        <h5 class="accSlide-headline">Mein Konto</h4>
+
+        <!--close Slide-->
+        <i class="fa-solid fa-xmark AccSlideCloseBtn" id="accCloseBtn"></i>
+
+        <!--Login-->
+        <div class="accSlide-login">
+
+          <h5>Willkommen zurück! Logge dich ein</h5>
+
+          <!--Email-->
+          <div style="position: relative">
+            <input class="accSlide-login-Inputs" id="login-email" type="text">
+            <p class="aSL-emailTxt" id="aSl-email-placeholder">E-Mail-Adresse</p>
+          </div>
+
+          <!--Password-->
+          <div style="position: relative">
+            <input class="accSlide-login-Inputs" id="login-passw" type="password">
+            <p class="aSL-passwTxt" id="aSl-pw-placeholder">Passwort</p>      
+            <i class="fa-solid fa-eye-slash aSL-passwEye" id="passwEye"></i>     
+          </div>
+
+          <!--password forgotte-->
+          <p class="accSlide-passwortforgotten">Passwort vergessen?</p>
+
+          <!--log in-->
+          <button class="accSlide-loginBtn">Einloggen</button>
+
+          <!--Registrieren-->
+          <div class="accSlide-reg">
+            <h6>Du hast noch kein Online-Konto?</h6>
+            <button class="accSlide-reg-btn"> Neu registrieren</button>
+          </div>
+
+          <div class="accSlide-infos">
+            <div>
+              <i class="fa-solid fa-house"></i> 
+              <span>Kontoübersicht</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>Mein Warenkorb</span>
+            </div>
+
+            <div style="margin-left:3px">
+              <i class="fa-solid fa-heart"></i>
+              <span>Meine Wunschliste</span>
+            </div>
+
+          </div>
+              
+        </div>
+        
+      </div>  
+
+    </div>
+
+  </div>
+    
+    <!--FilterMenu-->
+  <div id="filterMenu">
+    <div class="standardSlide introSlide" id="slideInStandard">
+      
+      <!--header-->
+      <p class="header">Filter Menu</p>
+
+      <!--closeMenu-->
+      <i class="fa-solid fa-xmark closeBtn" id="closeMenu"></i>
+
+      <!--Filter-->               
+      <button class="ButtonDesign" data-slidemenu="filterSlide" id="filter_button">
+          <span class="textDesign">Filter</span>               
+      </button>
+      
+      <!--Preis--> 
+      <button class="ButtonDesign" data-slidemenu="PriceSlide" id="preise_button">
+        <span class="textDesign" >Preis</span>     
+      </button>
+      
+      <!--Bewertungen-->
+      <button class="ButtonDesign" style="position:relative" data-slidemenu="RatingSlide" id="bewertungen_button">
+        <span class="textDesign" >Bewertungen</span>   
+      </button>
+
+      <!--information for 'Bewertungen'-->
+      <i class="fa-solid fa-circle-info ratingInfo" id="ratingInfo"></i>
+        <div class="ratingPopUp d-none closedPopUp" id="ratingPopUp">
+          Die durchschnittliche Bewertung basiert auf allen verfügbaren Produktbewertungen. 
+          Dabei werden auch Bewertungen aus externen Quellen berücksichtigt (z. B. von der Website des Herstellers oder anderen Online-Shops, die zu unserer Unternehmensgruppe gehören). 
+          Verifizierte Bewertungen sind mit dem Vermerk "verifiziert" gekennzeichnet.
+        </div>
+
+      <!--Märkte-->
+      <button class="ButtonDesign" style="position:relative" data-slidemenu="MärkteSlide" id="märkte_button">
+        <span class="textDesign" >Märkte</span>   
+      </button>
+
+      <!--Speicherkapazität-->
+      <button class="ButtonDesign" data-slidemenu="SpeicherKapSlide" id="speicherKap_button">
+        <span class="textDesign" >Speicherkapazität</span>  
+      </button>
+
+      <!--Marken-->
+      <button class="ButtonDesign" style="position:relative" data-slidemenu="MarkenSlide" id="marken_button">
+        <span class="textDesign" >Marken</span>
+      </button> 
+
+      <!--delete this and add it when window <=1060px-->
+      <div></div>
+
+
+      
+      <!--ChoosenFilter-->
+     
+      <div class="Choosenfilter" id="showChoosenFilter">
+        <div class="content" id="choosenContent">
+
+        </div>
+      </div>
+   
+      
+      <!-- alle löschen und submit-->
+      <div class="submitDiv" id="submitDiv">
+        <p class="alleLöschen d-none" id="alleLöschen">Alle löschen(1)</p>  
+        <button class="submitFilter" id="submitFilter">submit</button>        
+      </div>
+        
+    </div>
+
+
+    <div class="standardSlide" id="filterSlide">
+
+      <div class="slideHeader">
+        <i class="fa-solid fa-filter positioningIconFilter"></i>
+        <i class="fa-solid fa-arrow arrowCorner  d-none" id="closeFilterMenu" data-detach="filter_menu"></i>
+        <h1 class="changingText" id="aktuelle_filter">Topseller</h1>
+      </div>
+
+      <div class="filterMenu" data-menu="filter" id="filter_menu">
+        <div class="optionsBox">          
+          <button class="filter" >
+            <span class="optionFilter">
+              Preis: aufsteigend
+            </span>
+          </button>
+
+          <button class="filter">
+            <span class="optionFilter">
+              Preis: absteigend
+            </span>
+          </button>
+
+          <button class="filter">
+            <span class="optionFilter">
+              Bewertungen
+            </span>
+          </button>
+
+          <button class="filter selected" id="topseller">
+            <span class="optionFilter white">
+              Topseller
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="standardSlide centering"  id="PriceSlide">
+
+      <div class="slideHeader">
+        <i class="fa-solid fa-dollar-sign positioningIconPrice"></i>
+        <i class="fa-solid fa-arrow arrowCorner  d-none" id="closePreiseMenu" data-detach="preise_menu"></i>
+        <h1 class="changingText" id="changingPrice">0€ - 9999€</h1>
+      </div>
+
+      <div class="preise_menu"  data-menu="preise" id="preise_menu">
+        <div class="price-input">
+
+          <div style="position:relative">
+            <p class="preise_input_von">Von(€)</p>
+            <input class="preise_input" id="inputMin" min="0" max="9999" value="0"  type="number" >
+          </div>
+
+          <div class="separator">-</div>
+
+          <div class="ms-2" style="position:relative">
+            <p class="preise_input_von">Bis(€)</p>
+            <input class="preise_input" id="inputMax" min="0" max="9999" value="9999" type="number">
+          </div>    
+
+        </div>
+
+        <!--rangeSlider-->
+        <div class="RangeSliderBox">
+        <div style="padding-left:5px">
+            <div class="slider">
+              <div class="progress" id="test"></div>
+            </div>
+            <input class="PriceRanges" type="range" id="MinRange" min="0" max="9999" value="0">
+            <input class="PriceRanges" type="range" id="MaxRange" min="0" max="9999" value="9999">
+        </div>
+        </div>
+                  
+        <!--PriceToggle-->
+        <div class="priceToggle"> 
+          <span class="fw-bold">Reduzierte Artikel</span>
+          <input type="checkbox" id="preisToggle" hidden >
+          <label class="PreisToggle" id="saleItemsBtn"></label>
+        </div>
+      </div> 
+    </div>
+  
+    
+    <div class="standardSlide" id="RatingSlide">
+      <div class="slideHeader">
+        <i class="fa-solid fa-comment positioningIconRating"></i>
+        <i class="fa-solid fa-arrow arrowCorner  d-none" id="closeBewertungMenu" data-detach="bewertungen_menu"></i>
+        <h1 class="changingText" id="changingRating">Alle Bewertungen</h1>
+      </div>
+
+      <div class="bewertungen_menu" id="bewertungen_menu">
+
+        <!--5-->
+        <div class="starsBox" data-value="5">
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+        </div>
+
+        <!--4-->
+        <div class="starsBox" data-value="4">
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+        </div>
+
+        <!--3-->
+        <div class="starsBox" data-value="3">
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+        </div>
+
+        <!--2-->
+        <div class="starsBox" data-value="2">
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+        </div>
+
+        <!--1-->
+        <div class="starsBox" data-value="1">
+          <i class="fa-solid fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+          <i class="fa-regular fa-star default"></i>
+        </div>
+
+        <!--Alle Bewertungen-->
+        <div class="starsBox borderYellow" data-value="all" id="starsAll">
+          <span class="alleBewertungen yellow">Alle Bewertungen</span>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div class="standardSlide BigSlide" id="MärkteSlide">
+      <div class="slideHeader">
+        <i class="fa-solid fa-shop positioningIconMärkte"></i>
+        <i class="fa-solid fa-arrow arrowCorner  d-none" id="closeMärkteMenu" data-detach="märkte_menu"></i>  
+        <h1 class="changingText">
+          <span id="märkte_zähler">0</span>
+          von 50 Märkten  
+        </h1>
+      </div>
+
+      <div class="märkte-menu first-height normalMode" data-menu="märkte"  id="märkte_menu">        
+        <div class="searchBar" id="search_bar_märkte">  
+          <input class="märkte-input" type="text" id="searchBarInput" autocomplete="off">
+
+          <span class="FakePlaceHolder" id="fakePlaceHolder">
+            Märkte suchen
+            <i class="fa-regular fa-circle-xmark crossImg" id="crossImg"></i>
+          </span>
+
+          <div class="d-flex gap-2">
+            <button class="btnMärkte clear" id="search_kreuz">
+              <span class="fs-13">X</span>
+            </button>
+
+            <button class="btnMärkte chooseAll" id="chooseAll">
+              <span class="fs-13">Alle auswählen</span>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="market-selection" id="marketOptions">
+
+          <div class="selection-box" data-find="Amazon">
+            <div class="title">Amazon</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Alternate">
+            <div class="title">Alternate</div>
+            <div class="subtitle">Technik & Elektronik leicht gemacht</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Alza">
+            <div class="title">Alza</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Apple">
+            <div class="title">Apple</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Arlt">
+            <div class="title">Arlt</div>
+            <div class="subtitle">Elektronik & mehr</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Berlet">
+            <div class="title">Berlet</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Conrad Electronic">
+            <div class="title">Conrad Electronic</div>
+            <div class="subtitle">Elektronik für jeden Bedarf</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Cyberport">
+            <div class="title">Cyberport</div>
+            <div class="subtitle">Innovative Technik entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Conrad Connect">
+            <div class="title">Conrad Connect</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Computeruniverse">
+            <div class="title">Computeruniverse</div>
+            <div class="subtitle">Technik & Elektronik leicht gemacht</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Caseking">
+            <div class="title">Caseking</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Digitalo">
+            <div class="title">Digitalo</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="DeinHandy">
+            <div class="title">DeinHandy</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Discount24">
+            <div class="title">Discount24</div>
+            <div class="subtitle">Technik & Elektronik leicht gemacht</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Deltatecc">
+            <div class="title">Deltatecc</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="DeutschlandHandy">
+            <div class="title">DeutschlandHandy</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Euronics">
+            <div class="title">Euronics</div>
+            <div class="subtitle">Alles für Ihre Unterhaltung</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="EP: ElectronicPartner">
+            <div class="title">EP: ElectronicPartner</div>
+            <div class="subtitle">Elektronik & mehr</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Expert">
+            <div class="title">Expert</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="E.Leclerc">
+            <div class="title">E.Leclerc</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Euronics XXL">
+            <div class="title">Euronics XXL</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Fachmarkt24">
+            <div class="title">Fachmarkt24</div>
+            <div class="subtitle">Technik & Elektronik leicht gemacht</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Freenet">
+            <div class="title">Freenet</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Funkwerk">
+            <div class="title">Funkwerk</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Fujitsu">
+            <div class="title">Fujitsu</div>
+            <div class="subtitle">Alles für Ihre Unterhaltung</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Fritz Berger">
+            <div class="title">Fritz Berger</div>
+            <div class="subtitle">Elektronik & mehr</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Galeria Karstadt Kaufhof">
+            <div class="title">Galeria Karstadt Kaufhof</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Gigaset">
+            <div class="title">Gigaset</div>
+            <div class="subtitle">Technologie, die begeistert</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Gorenje">
+            <div class="title">Gorenje</div>
+            <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Gravis">
+            <div class="title">Gravis</div>
+            <div class="subtitle">Technik & Elektronik leicht gemacht</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Giant">
+            <div class="title">Giant</div>
+            <div class="subtitle">Innovative Produkte entdecken</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Otto">
+            <div class="title">Otto</div>
+            <div class="subtitle">Ihr Onlineshop für Zuhause & Lifestyle</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+
+          <div class="selection-box" data-find="Saturn">
+            <div class="title">Saturn</div>
+            <div class="subtitle">Alles für Ihre Unterhaltung</div>
+            <div class="action">
+              <button class="btnMärkte"><span class="fs-13">Auswählen</span></button>
+            </div>
+          </div>
+          
+        </div>  
+      </div>
+
+      <div class="chosenMarkets">
+        <div class="empty hidden" id="noresTxt">
+          <div>
+           keine Märkte gefunden.
+           <i class="fa-solid fa-heart-crack red"></i>
+          </div>
+        </div>
+  
+        <div class="panel" id="panel">
+          <span class="ausgewählteMärkte">Ausgewählte Märkte</span>
+            <div class="marketGrip"></div>
+            <i class="fa-solid fa-caret-down caret" id="toggleChosenMarkets"></i>  
+        </div>
+        <div class="chosenMarkets-selections"></div>
+      </div>
+
+    </div>
+
+
+    <div class="standardSlide" id="SpeicherKapSlide">
+      <div class="slideHeader">
+        <i class="fa-solid fa-sd-card positioningIconGB"></i>
+        <i class="fa-solid fa-arrow arrowCorner  d-none" id="closeSpeicherKapMenu" data-detach="speicherKap_menu"></i>      
+        <h1 class="changingText" id="changingSpeicherKap">Alle GB-Optionen</h1>
+      </div>
+
+      <div class="speicherKapMenu" id="speicherKap_menu">
+        <div class="speicherBox" data-value="1 TB">
+          <span class="optionGb">1 TB</span>
+        </div>
+
+        <div class="speicherBox" data-value="512 GB">
+          <span class="optionGb">512 GB</span>
+        </div>
+
+        <div class="speicherBox" data-value="256 GB">
+          <span class="optionGb">256 GB</span>
+        </div>
+
+        <div class="speicherBox" data-value="128 GB">
+          <span class="optionGb">128 GB</span>
+        </div>
+
+        <div class="speicherBox" data-value="64 GB">
+          <span class="optionGb">64 GB</span>
+        </div>
+
+        <div class="speicherBox selected" data-value="all" id="gbAll">
+          <span class="optionGb white">Alle GB-Optionen</span>
+        </div> 
+      </div>   
+    </div>
+
+
+    <div class="standardSlide BigSlide" id="MarkenSlide"> 
+        <div class="slideHeader">
+          <i class="fa-solid fa-copyright positioningIconMarken" style="font-size:30px"></i>
+          <i class="fa-solid fa-arrow arrowCorner  d-none" id="closeMarkenMenu" data-detach="marken_menu"></i>   
+          <h1 class="changingText">
+            <span id="markenZähler">0</span> 
+            von 118 Marken
+          </h1>
+        </div>
+
+        <div class="marken-menu first-height normalMode" data-menu="marken"  id="marken_menu">    
+          <div class="searchBar" id="search_bar_marken">  
+            <input class="marken-input" type="text" id="searchBarInputMk" autocomplete="off">
+
+            <span class="FakePlaceHolder" id="fakePlaceHolderMk">
+              Marken suchen
+              <i class="fa-regular fa-circle-xmark crossImg" id="crossImgMk"></i>
+            </span>
+
+            <div class="d-flex gap-2">
+              <button class="btnMarken clear" id="search_kreuzMk">
+                <span class="fs-13">X</span>
+              </button>
+
+              <button class="btnMarken chooseAll" id="chooseAllMk">
+                <span class="fs-13">Alle auswählen</span>
+              </button>
+            </div>
+          </div>     
+
+          <div class="marken-selection" id="markenOptions">
+
+            <div class="selection-box" data-find="Apple">
+              <div class="title">Apple</div>
+              <div class="subtitle">Elektronik und Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Acepad">
+              <div class="title">Acepad</div>
+              <div class="subtitle">Tablet & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Agm by Beafon">
+              <div class="title">Agm by Beafon</div>
+              <div class="subtitle">Smartphones & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="AILIHEN">
+              <div class="title">AILIHEN</div>
+              <div class="subtitle">Audio & Kopfhörer</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Airturn">
+              <div class="title">Airturn</div>
+              <div class="subtitle">Musik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="AKG">
+              <div class="title">AKG</div>
+              <div class="subtitle">Audio & Kopfhörer</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Alcatel">
+              <div class="title">Alcatel</div>
+              <div class="subtitle">Smartphones & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ALLDOCUBE">
+              <div class="title">ALLDOCUBE</div>
+              <div class="subtitle">Tablets & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ALOGIC">
+              <div class="title">ALOGIC</div>
+              <div class="subtitle">Kabel & Adapter</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Amazon">
+              <div class="title">Amazon</div>
+              <div class="subtitle">Alles, was Sie lieben – online entdecken</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Amazon Basics">
+              <div class="title">Amazon Basics</div>
+              <div class="subtitle">Haushalt & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Anker">
+              <div class="title">Anker</div>
+              <div class="subtitle">Ladegeräte & Powerbanks</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ANTEMPER">
+              <div class="title">ANTEMPER</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Aplic">
+              <div class="title">Aplic</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ascrecem">
+              <div class="title">ascrecem</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Asus">
+              <div class="title">Asus</div>
+              <div class="subtitle">Computer, Laptops und Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ATTACK SHARK">
+              <div class="title">ATTACK SHARK</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Augustin Group">
+              <div class="title">Augustin Group</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="Auna">
+              <div class="title">Auna</div>
+              <div class="subtitle">Audio & Musik</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="AWOW">
+              <div class="title">AWOW</div>
+              <div class="subtitle">Tablets & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+
+            <div class="selection-box" data-find="ayex">
+              <div class="title">ayex</div>
+              <div class="subtitle">Elektronik & Zubehör</div>
+              <div class="action">
+                <button class="btnMarken"><span class="fs-13">Auswählen</span></button>
+              </div>
+            </div>
+      
+          </div>       
+        </div> 
+
+        <div class="chosenMarken">
+          <div class="empty hidden" id="noresTxtMk">
+            <div>
+              keine Märkte gefunden.
+              <i class="fa-solid fa-heart-crack red"></i>
+            </div>
+          </div>
+  
+          <div class="panel" id="panelMk">
+            <span class="ausgewählteMarken">Ausgewählte Marken</span>
+              <div class="markenGrip"></div>
+              <i class="fa-solid fa-caret-down caret" id="toggleChosenMarken"></i>  
+          </div>
+          <div class="chosenMarken-selections"></div>
+        </div>
+    </div>
+  
+
+
+    
+  </div>
+ 
+
+
+  <!--Content-->
+  <div class="main" id="mainContent">
+        <div class="produkteDiv" id="inhalt" style="opacity: 1;">
+
+      
+
+      <div class="card produktBox">
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151020016?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">26</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Wi-Fi (11th generation), Tablet, 256 GB, 11 Zoll, Blau</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">499.99</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_140644216?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">36</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Pro Wi-Fi (2024), Tablet, 256 GB, 13 Zoll, Space Schwarz</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">1489.0</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/89e37652-a011-5557-82f8-039cb034f318?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+
+            
+
+            <span style="font-size:10px">64</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Apple iPad 10.2 Wi-Fi + Cellular (2021) Tablet (10,2, 64 GB, iPadOS, 4G (LTE)</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            19
+          </span> 
+
+          
+            <s>UVP 599.0</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">479.99</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151019976?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">32</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Wi-Fi (11th generation), Tablet, 256 GB, 11 Zoll, Silber</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">499.99</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/77b7e17e-ffb1-5eaa-926a-a0195febaf0f?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">37</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Fintie Tablet-Hülle für iPad 11 Generation 11'' 2025 (A16), iPad 10 Generation 10.9'' 2022, mit Schutzfolie-ultradünne...</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            50
+          </span> 
+
+          
+            <s>UVP 37.99</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">18.99</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151022569?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">33</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Air Wi-Fi (2025), 7. Generation, Tablet, 128 GB, 11 Zoll, Space Grau</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            14
+          </span> 
+
+          
+            <s>UVP 699.0</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">599.0</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/4a61894e-5758-5aca-a30b-eb9d83c841ed?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+
+            
+
+            <span style="font-size:10px">219</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Apple 11 iPad Wi-Fi (2025) Tablet (10,86, iPadOS)</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">389.96</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151022659?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">12</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Air Wi-Fi (2025), 7. Generation, Tablet, 256 GB, 11 Zoll, Space Grau</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            12
+          </span> 
+
+          
+            <s>UVP 829.0</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">729.0</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/4a61894e-5758-5aca-a30b-eb9d83c841ed?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+
+            
+
+            <span style="font-size:10px">219</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Apple 11 iPad Wi-Fi (2025) Tablet (10,86, iPadOS)</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">389.96</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/b5f9a0dc-0824-5521-a5b7-f8cb257e80e1?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+
+            
+
+            <span style="font-size:10px">76</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Apple Eingabestift Pencil (USB-C)</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">95.0</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://i.otto.de/i/otto/13a3a31c-1971-539b-88d3-6e7f6a24f935?$responsive_ft2$" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+
+            
+
+            <span style="font-size:10px">54</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">Apple 11 iPad Air Wi-Fi (2025) Tablet (10,86, iPadOS)</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            17
+          </span> 
+
+          
+            <s>UVP 699.0</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">579.0</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div class="card produktBox">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px" src="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151020065?x=320&amp;y=320&amp;format=jpg&amp;quality=80&amp;sp=yes&amp;strip=yes&amp;trim&amp;ex=320&amp;ey=320&amp;align=center&amp;resizesource&amp;unsharp=1.5x1+0.7+0.02&amp;cox=0&amp;coy=0&amp;cdx=320&amp;cdy=320" alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&amp;h=187&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.3&amp;pid=1.7'"></div>
+      <div class="card-body">
+
+        <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+        <div class="mb-0">
+          <div class="stars">
+
+          
+
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+            
+
+            
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+            
+
+            
+
+            <span style="font-size:10px">73</span>
+
+          
+          </div>
+
+        </div>
+          
+        
+
+        <p class="fw-bold mb-1">APPLE iPad Wi-Fi (11th generation), Tablet, 128 GB, 11 Zoll, Blau</p>
+
+        
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+            None
+          </span> 
+
+          
+            <s>UVP None</s>
+
+          
+          
+        </p>
+
+        
+        
+
+        <p class=" fw-bold mb-4 text-dark">389.99</p>
+        <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+      </div>
+
+
+      </div>
+
+      
+
+      <div id="12weitereProdukteDiv" style="display:flex;flex-direction:column;align-items:center;flex-basis:100%">
+      <button class="weitereProdukte" onclick="dataBase_request_scrapingData()">12 weitere Produkte anzeigen</button>
+      <p>
+        <span id="prodCount">6</span>
+        von
+        <span id="prodCountMax">33</span>
+      </p>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+<script type="module" src="./modulesJs/mainPage.js"></script>
+    
+</body>
+</html> 

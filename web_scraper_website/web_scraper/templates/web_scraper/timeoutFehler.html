@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="errorBox" style="opacity:0" id="inhalt">
+        <i class="fa-solid fa-x errorBoxClose" onclick="EntferneErrorBox(event)"></i>
+        <i class="fa-solid fa-triangle-exclamation errorIcon"></i>
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
+         <span class="oops">Ooops!</span>
+         <span class="ersteText">Die Produkt Anfragen haben das Zeitlimit überschritten und wurden abgebrochen.Möchtest du die gleiche Suche erneut starten – diesmal ohne Zeitbegrenzung?</span>
+         <button class="neuStartenButton" onclick="scrapingBiggerTimeOut(event)">Suche starten</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

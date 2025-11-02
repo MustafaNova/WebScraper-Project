@@ -1,0 +1,108 @@
+{% extends "web_scraper/base.html" %}
+{% load web_scraper_tags %}
+
+
+
+{% block content %}
+
+<div hx-get="{% url 'infinite_scrolling' %}?produkt={{user_produkt}}&startpoint={{startpoint}}&scraper_end={{scraper_end}}" 
+hx-trigger="revealed"
+hx-target="#target"
+hx-swap="outerHTML">
+ 
+</div>
+
+
+<div class="container d-flex flex-wrap">
+
+    {% for produkt in produkte %}
+
+    <div class="card me-3 mt-3" style="width:280px;height:470px">
+
+      <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px"  src="{{produkt.4}}"  alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7'"></div>
+      <div class="card-body">
+ 
+        <div class="mb-0">
+         <div class="stars">
+
+          {% if produkt.2 == "keine Bewertungen" %}
+           <i class="far fa-star"></i> <!-- Leerer Stern -->
+           <i class="far fa-star"></i> <!-- Leerer Stern -->
+           <i class="far fa-star"></i> <!-- Leerer Stern -->
+           <i class="far fa-star"></i> <!-- Leerer Stern -->
+           <i class="far fa-star"></i> <!-- Leerer Stern -->
+           <span style="font-size:10px">0</span>
+          
+          {% else %}
+
+           {% for i in produkt.2.0.0 %}
+            <i class="fas fa-star"></i> <!-- voller Stern -->
+           {% endfor %}
+
+           {% for i in produkt.2.0.1 %}
+            <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+           {% endfor %}
+
+           {% for i in produkt.2.0.2 %}
+            <i class="far fa-star"></i> <!-- Leerer Stern -->
+           {% endfor %}
+
+           <span style="font-size:10px">{{produkt.2.1}}</span>
+
+          {% endif %}
+         </div>
+
+        </div>
+         
+        
+  
+        <p class="fw-bold mb-1"  >{{produkt.0|name_length_check}}</p>
+
+        {% if produkt.1.1 != "-" %}
+
+        <p class="d-flex align-items-center mb-1"> 
+          <!--Rabatt in Prozent vom Produkt-->
+
+          <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+           {{produkt.1.2}}
+          </span> 
+
+          {% if "UVP" in produkt.1.1  %}
+           <s>{{produkt.1.1}}</s>
+           {% else %}
+           <s>UVP {{produkt.1.1}}</s>
+
+          {% endif  %}
+         
+        </p>
+
+        {% endif  %}
+        
+  
+        <p  class=" fw-bold mb-4 text-dark">{{produkt.1.0}}</p>
+  
+      </div>
+
+      <div class="ms-3">
+        <button style="width:200px" class="btn btn-primary mb-3 p-2"><img style="width:20px; height:20px" class="rounded-lg me-2" src="https://th.bing.com/th/id/OIP.d2lQxXxy8TnCv_R-QJKVIgHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7">In den Warenkorb</button>
+        <button style="width:50px" class="btn btn-primary p-2 mb-3"><img class="rounded-lg" style="width:20px; height:20px" src="https://th.bing.com/th/id/OIP.KhH8nO4FTYiUCK-J7LNEEAHaFj?w=284&h=213&c=7&r=0&o=5&dpr=1.3&pid=1.7"></button>
+      </div>
+  
+    </div>
+
+    {% endfor %}
+
+  <div id="target">
+
+  </div>
+      
+</div>
+
+
+
+ 
+
+
+
+
+{% endblock content %}

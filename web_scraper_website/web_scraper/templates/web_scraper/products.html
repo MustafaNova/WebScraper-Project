@@ -1,0 +1,96 @@
+{% load web_scraper_tags %}
+
+
+
+<div class="produkteDiv d-flex flex-wrap" id="inhalt">
+
+  {% for produkt in produkte %}
+
+  <div class="card produktBox">
+
+  <div class="card-header bg-white" style="height:180px"><img class="rounded-lg" style="width:180px;height:150px"  src="{{produkt.4}}"  alt="Bild konnte nicht geladen werden" onerror="this.src='https://th.bing.com/th/id/OIP.2TYY9G7GZxNSc0VTXVFpQAHaE8?w=280&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7'"></div>
+  <div class="card-body">
+
+    <i class="fa-regular fa-heart favorite" onclick="filling(event)"></i>
+
+    <div class="mb-0">
+      <div class="stars">
+
+      {% if produkt.2 == "keine Bewertungen" %}
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        <span style="font-size:10px">0</span>
+      
+      {% else %}
+
+        {% for i in produkt.2|volleSterne %}
+        <i class="fas fa-star"></i> <!-- voller Stern -->
+        {% endfor %}
+
+        {% for i in produkt.2|halbeSterne %}
+        <i class="fas fa-star-half-alt"></i> <!-- Halber Stern -->
+        {% endfor %}
+
+        {% for i in produkt.2|leereSterne %}
+        <i class="far fa-star"></i> <!-- Leerer Stern -->
+        {% endfor %}
+
+        <span style="font-size:10px">{{produkt.2|anzahlSterne}}</span>
+
+      {% endif %}
+      </div>
+
+    </div>
+      
+    
+
+    <p class="fw-bold mb-1"  >{{produkt.0|name_length_check}}</p>
+
+    {% if produkt.1.1 != "-" %}
+
+    <p class="d-flex align-items-center mb-1"> 
+      <!--Rabatt in Prozent vom Produkt-->
+
+      <span class="bg-danger rounded p-1 me-1 text-white " style="font-size:10px">
+        {{produkt.1.2}}
+      </span> 
+
+      {% if "UVP" in produkt.1.1  %}
+        <s>{{produkt.1.1}}</s>
+        {% else %}
+        <s>UVP {{produkt.1.1}}</s>
+
+      {% endif  %}
+      
+    </p>
+
+    {% endif  %}
+    
+
+    <p class=" fw-bold mb-4 text-dark">{{produkt.1.0}}</p>
+    <button class="warenkorbBtn"><span style="position:relative;left:-3px"><i class="fa-solid fa-cart-shopping" style="margin-right:11px"></i>In den Warenkorb</span></button>
+
+  </div>
+
+
+  </div>
+
+  {% endfor %}
+
+  <div id="12weitereProdukteDiv" style="display:flex;flex-direction:column;align-items:center;flex-basis:100%">
+  <button class="weitereProdukte" onclick="dataBase_request_scrapingData()" >12 weitere Produkte anzeigen</button>
+  <p>
+    <span id="prodCount">6</span>
+    von
+    <span id="prodCountMax">33</span>
+  </p>
+  </div>
+
+
+
+
+</div>
+

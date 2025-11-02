@@ -1,0 +1,376 @@
+
+body{
+    overflow-y: hidden;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+}
+
+.navBar{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: black;
+    height: 100px
+
+}
+
+.navBarTxt{
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    color: white;
+    height: 42px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.lock{
+    margin-bottom: 13px;
+    font-size: 13px;
+
+}
+
+.arrowLeft{
+    font-size: 13px;
+}
+
+.goBackContainer{
+    position: absolute;
+    height: 30px;
+    left: 5%;
+    top: 120px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.goBack{
+    margin-top: 10px;
+    text-decoration: underline;
+    text-decoration-color: rgb(85, 85, 85);
+    text-underline-offset: 3px;
+}
+
+.goBack:hover{
+    text-decoration: none;
+}
+
+
+.navBarLogo{
+    width: 210px;
+    height: 42px
+}
+
+
+.main{
+    margin-top: 80px;
+    margin-left: -65px;
+    bottom: 120px;
+    position: relative;
+    padding-left: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 35%;
+
+}
+
+.content{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    height: 560px;
+    width: 100%; 
+    margin-top: 190px;
+
+}
+
+
+.regHeader{
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(37, 36, 36);
+}
+
+.blackSquare, .graySquare{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.blackSquare{
+    background-color: rgb(66, 65, 65);
+    color: white;
+ 
+
+}
+
+.graySquare{
+    border: 2px solid rgb(182, 181, 181);
+    color: rgb(163, 162, 162);
+    
+}
+
+.squareTxt, .graySquareTxt{
+    position: absolute;
+    white-space: nowrap;
+    top: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: rgb(58, 57, 57);
+}
+
+.graySquareTxt{
+    color: rgb(184, 182, 182);
+    font-weight: 400;
+}
+
+.firstSquareOutline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 2px solid rgb(72, 71, 71);
+}
+
+.step{
+    position: relative;
+    height: 70px;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smaller{
+    width: 38px;
+}
+
+
+
+
+
+
+.steps{
+    width: 100%;
+}
+
+
+.stepsDesign{
+    margin-left: 40px;
+    padding-left: 5px;
+    padding-right: 25px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.lineContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:35px;
+    width: 100%;
+    bottom: 19px;
+ 
+}
+
+.line{
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(198, 196, 196);
+
+
+
+}
+
+.part, .partAllowed{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.part{
+    cursor: not-allowed;
+}
+
+.partAllowed{
+    cursor: pointer;
+}
+
+
+.emailInputContainer{
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.emailInput{
+    width: 100%;
+    height: 120%;
+    border: 2px solid rgb(127, 126, 126);
+    padding-left: 15px;
+    padding-top: 15px ;
+    outline: none;
+    
+}
+
+.emailInput:hover{
+    border: 2px solid rgb(127, 126, 126);
+
+}
+
+.warningMsg{
+    margin-top: 5px;
+    margin-left: 3px;
+    display: none;
+}
+
+.showWarningMsg{
+    display: block;
+}
+
+.redBorder{
+    border: 2px solid rgb(236, 75, 75);
+}
+
+
+
+.placeholder{
+    position: absolute;
+    top: 33%;
+    left: 15px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.moveUp{
+    top: 6px !important;
+    font-size: 12px;
+}
+
+.weiterBtn{
+    width: 100%;
+    height: 55px;
+    margin-top: 60px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    font-weight: bold;
+}
+
+
+.loginContainer{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginHeader{
+    font-size: 14px;
+    color: rgb(59, 58, 58);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.loginBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    font-weight: bold;
+}
+.loginTxt{
+    text-decoration: underline;
+}
+.loginBtn:hover .loginTxt{
+    text-decoration: none;
+}
+.loginBtn:hover{
+    background-color: rgb(244, 243, 243);
+}
+
+.loginArrow{
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+
+
+@media(max-width: 1320px){
+    #squareTxt3{
+        white-space: normal;
+    }
+
+}
+
+@media(max-width: 1180px){
+    #squareTxt2{
+        white-space: normal;
+    }
+
+}
+
+@media(max-width: 1104px){
+    .main{
+        width: 100%;
+    }
+
+
+    .steps{
+        width: 110%;
+    }
+
+    .regHeader{
+        position: relative;
+        left: 1.5%;
+        top: 5px;
+    }
+
+    #squareTxt2, #squareTxt3{
+        white-space: nowrap;
+    }
+
+    .goBackContainer{
+        top:115px;
+        cursor: pointer;
+        z-index: 10;
+        
+    }
+
+    .emailInput{
+        height: 65px;
+    }
+
+
+
+    .placeholder{
+        top: 40%;
+    }
+
+}

@@ -1,0 +1,1470 @@
+2025-07-25 08:52:35,284 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000165ECF0FFE0>> raised: ImportError('attempted relative import with no known parent package') 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+ImportError: attempted relative import with no known parent package
+2025-07-25 08:52:35,300 - z.284 - Signal handler <promise@0x165eda27f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x165ed9ea690>>> raised: ImportError('attempted relative import with no known parent package') 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+ImportError: attempted relative import with no known parent package
+2025-07-25 08:54:23,154 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001745987A360>> raised: ImportError('attempted relative import with no known parent package') 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+ImportError: attempted relative import with no known parent package
+2025-07-25 08:54:23,166 - z.284 - Signal handler <promise@0x174598b7f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x1745987a2a0>>> raised: ImportError('attempted relative import with no known parent package') 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from .Maerkte.Main.Main import main
+ImportError: attempted relative import with no known parent package
+2025-07-25 08:55:07,328 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001BFA063A000>> raised: ImportError("cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\tasks.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+ImportError: cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py)
+2025-07-25 08:55:07,333 - z.284 - Signal handler <promise@0x1bfa0677f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x1bf9f477cb0>>> raised: ImportError("cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+ImportError: cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:14:45,171 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001EC17EAB320>> raised: ImportError("cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\tasks.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+ImportError: cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py)
+2025-07-25 09:14:45,283 - z.284 - Signal handler <promise@0x1ec17f37f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x1ec17dbfcb0>>> raised: ImportError("cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+ImportError: cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:20:33,717 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001ABEBFA7FE0>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:20:33,754 - z.284 - Signal handler <promise@0x1abec207f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x1abec1c99d0>>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:20:51,715 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000002BAF7BC9280>> raised: ImportError("cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\tasks.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+ImportError: cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py)
+2025-07-25 09:20:51,716 - z.284 - Signal handler <promise@0x2baf7c07f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x2baf7a57cb0>>> raised: ImportError("cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+ImportError: cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:22:17,753 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001BA1A827FE0>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:22:17,764 - z.284 - Signal handler <promise@0x1ba1aa87f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x1ba1aa48bf0>>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:25:48,743 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000025F3FA07FE0>> raised: ImportError("cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\tasks.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+ImportError: cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py)
+2025-07-25 09:25:48,755 - z.284 - Signal handler <promise@0x25f3fc67f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x25f3fc299d0>>> raised: ImportError("cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+ImportError: cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:27:07,712 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000020083C77FE0>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:27:07,715 - z.284 - Signal handler <promise@0x20083ed7f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x20083e99e80>>> raised: ImportError("cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 14, in <module>
+    from .Main import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\__init__.py", line 1, in <module>
+    from .Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py", line 18, in <module>
+    from Maerkte import prepare_scraping, creating_scraper_tasks, debugPrint, give_correct_returnValue
+ImportError: cannot import name 'prepare_scraping' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-25 09:34:40,771 - z.284 - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000021A21E57FE0>> raised: ImportError("cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\tasks.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\fixups\django.py", line 141, in validate_models
+    run_checks()
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\core\checks\urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper_website\urls.py", line 22, in <module>
+    path('',include('web_scraper.urls'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\urls.py", line 2, in <module>
+    from . import views
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py", line 5, in <module>
+    from .Maerkte.Main.Main import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+ImportError: cannot import name 'scrapeDetails' from partially initialized module 'tasks' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py)
+2025-07-25 09:34:40,779 - z.284 - Signal handler <promise@0x21a220b7f70 --> <bound method Celery._autodiscover_tasks of <Celery web_scraper_website at 0x21a22079d90>>> raised: ImportError("cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\\Users\\musta\\WebScraperProjekt\\web_scraper_website\\web_scraper\\Maerkte\\__init__.py)") 
+Traceback (most recent call last):
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\utils\dispatch\signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 788, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 797, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\app\base.py", line 792, in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 220, in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 246, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\WebScraperProjekt\virtualEnv\Lib\site-packages\celery\loaders\base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\musta\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py", line 12, in <module>
+    from .Saturn import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\__init__.py", line 3, in <module>
+    from .scraperS import *
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py", line 5, in <module>
+    from tasks import scrapeDetails
+  File "C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py", line 2, in <module>
+    from Maerkte import main
+ImportError: cannot import name 'main' from partially initialized module 'Maerkte' (most likely due to a circular import) (C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\__init__.py)
+2025-07-29 09:05:22,270 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-07-29 09:11:26,506 - z.253 - Not Found: /favicon.ico 
+2025-07-29 09:11:39,081 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-07-29 09:15:14,581 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:35:28,165 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:35:33,238 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:35:41,118 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:35:47,046 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:36:24,418 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:36:30,250 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:36:42,141 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:36:46,949 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:37:54,992 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:38:04,996 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:38:16,020 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:38:23,026 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:38:28,686 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:40:10,940 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:40:16,321 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:42:28,120 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:42:34,237 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:42:38,937 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:42:44,050 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:42:46,893 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:43:16,173 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:43:18,866 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:00,167 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:04,341 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:11,305 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:18,220 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:28,061 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:39,977 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:44,695 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:48,442 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:52,151 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:54,799 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:44:57,547 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:02,389 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:05,223 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:26,967 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:31,679 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:34,632 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:45:56,835 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:02,482 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:41,814 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:44,806 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:47,558 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:56,439 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:46:59,297 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:47:03,071 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:47:06,919 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:47:21,539 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:47:27,546 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:19,531 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:29,521 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:32,445 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:44,034 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:49,266 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:48:53,148 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:06,781 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:41,110 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:44,023 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:46,825 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:49,802 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:53,681 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:56,429 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:49:58,987 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\otto_functions.py changed, reloading. 
+2025-07-29 09:52:35,406 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-29 09:53:03,088 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-07-29 09:54:37,626 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-29 09:55:35,382 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-29 09:55:40,400 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 07:57:02,870 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 07:57:05,704 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 07:59:24,355 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:01:17,472 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:01:20,467 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:01:23,312 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:01:26,066 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:01:30,961 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:01:34,791 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:05:50,648 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:05:55,861 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:06:11,899 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:06:15,917 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:06:18,815 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:06:41,535 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:07:12,851 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\tasks.py changed, reloading. 
+2025-07-31 08:08:18,046 - z.253 - Not Found: /favicon.ico 
+2025-07-31 08:14:48,491 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main_functions.py changed, reloading. 
+2025-07-31 08:15:23,298 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:15:34,158 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:15:55,111 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:16:03,536 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:16:06,530 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:16:24,487 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:21,874 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:24,824 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:27,572 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:31,718 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:34,710 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:37,688 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:41,507 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:44,322 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:47,248 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:17:56,183 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:18:10,133 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:18:19,040 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:18:21,860 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scrapeProdDetailsS.py changed, reloading. 
+2025-07-31 08:19:24,764 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:28,326 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:31,930 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:36,729 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:40,468 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:47,288 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:50,081 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:52,562 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:19:55,227 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:02,984 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:07,080 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:11,011 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:16,850 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:20,541 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:29,939 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:35,531 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:45,092 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:20:58,115 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scrapeProdDetailsO.py changed, reloading. 
+2025-07-31 08:21:53,871 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:07,699 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:12,380 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:25,433 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:33,215 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:40,135 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:22:46,041 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-07-31 08:23:24,477 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:38,436 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:40,992 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:44,881 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:47,573 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:50,122 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:56,089 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:23:59,973 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:24:03,640 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:24:06,361 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:24:09,752 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:24:19,658 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:24:27,737 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-07-31 08:25:15,549 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-26 09:40:28,638 - z.253 - Not Found: /favicon.ico 
+2025-08-26 09:40:34,496 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:41:38,106 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:44:25,782 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:45:05,679 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:51:14,545 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:52:45,204 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:52:45,420 - z.253 - Not Found: /favicon.ico 
+2025-08-26 09:53:33,735 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:53:33,925 - z.253 - Not Found: /favicon.ico 
+2025-08-26 09:56:33,841 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:56:37,903 - z.253 - Not Found: /favicon.ico 
+2025-08-26 09:57:08,780 - z.396 - Connection to Redis lost: Retry (0/20) now. 
+2025-08-26 09:57:12,839 - z.396 - Connection to Redis lost: Retry (1/20) in 1.00 second. 
+2025-08-26 09:57:17,909 - z.396 - Connection to Redis lost: Retry (2/20) in 1.00 second. 
+2025-08-26 09:57:22,985 - z.396 - Connection to Redis lost: Retry (3/20) in 1.00 second. 
+2025-08-26 09:57:28,043 - z.396 - Connection to Redis lost: Retry (4/20) in 1.00 second. 
+2025-08-26 09:57:33,128 - z.396 - Connection to Redis lost: Retry (5/20) in 1.00 second. 
+2025-08-26 09:57:38,204 - z.396 - Connection to Redis lost: Retry (6/20) in 1.00 second. 
+2025-08-26 09:57:43,294 - z.396 - Connection to Redis lost: Retry (7/20) in 1.00 second. 
+2025-08-26 09:57:48,376 - z.396 - Connection to Redis lost: Retry (8/20) in 1.00 second. 
+2025-08-26 09:57:53,433 - z.396 - Connection to Redis lost: Retry (9/20) in 1.00 second. 
+2025-08-26 09:57:58,481 - z.396 - Connection to Redis lost: Retry (10/20) in 1.00 second. 
+2025-08-26 09:58:03,554 - z.396 - Connection to Redis lost: Retry (11/20) in 1.00 second. 
+2025-08-26 09:58:13,498 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:58:26,964 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-08-26 09:58:35,822 - z.396 - Connection to Redis lost: Retry (0/20) now. 
+2025-08-26 09:58:39,878 - z.396 - Connection to Redis lost: Retry (1/20) in 1.00 second. 
+2025-08-26 09:58:44,927 - z.396 - Connection to Redis lost: Retry (2/20) in 1.00 second. 
+2025-08-26 09:58:50,020 - z.396 - Connection to Redis lost: Retry (3/20) in 1.00 second. 
+2025-08-26 09:58:55,089 - z.396 - Connection to Redis lost: Retry (4/20) in 1.00 second. 
+2025-08-26 09:59:00,143 - z.396 - Connection to Redis lost: Retry (5/20) in 1.00 second. 
+2025-08-26 09:59:05,228 - z.396 - Connection to Redis lost: Retry (6/20) in 1.00 second. 
+2025-08-26 09:59:10,284 - z.396 - Connection to Redis lost: Retry (7/20) in 1.00 second. 
+2025-08-26 09:59:21,886 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-26 09:59:42,551 - z.396 - Connection to Redis lost: Retry (0/20) now. 
+2025-08-26 09:59:46,628 - z.396 - Connection to Redis lost: Retry (1/20) in 1.00 second. 
+2025-08-26 09:59:51,709 - z.396 - Connection to Redis lost: Retry (2/20) in 1.00 second. 
+2025-08-26 09:59:56,777 - z.396 - Connection to Redis lost: Retry (3/20) in 1.00 second. 
+2025-08-26 10:00:01,846 - z.396 - Connection to Redis lost: Retry (4/20) in 1.00 second. 
+2025-08-26 10:00:06,912 - z.396 - Connection to Redis lost: Retry (5/20) in 1.00 second. 
+2025-08-26 10:00:11,972 - z.396 - Connection to Redis lost: Retry (6/20) in 1.00 second. 
+2025-08-26 10:00:17,018 - z.396 - Connection to Redis lost: Retry (7/20) in 1.00 second. 
+2025-08-27 07:42:03,447 - z.253 - Not Found: /favicon.ico 
+2025-08-27 07:42:36,217 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-08-27 07:42:45,090 - z.396 - Connection to Redis lost: Retry (0/20) now. 
+2025-08-27 07:42:49,137 - z.396 - Connection to Redis lost: Retry (1/20) in 1.00 second. 
+2025-08-27 07:42:54,205 - z.396 - Connection to Redis lost: Retry (2/20) in 1.00 second. 
+2025-08-27 07:42:59,315 - z.396 - Connection to Redis lost: Retry (3/20) in 1.00 second. 
+2025-08-27 07:43:04,384 - z.396 - Connection to Redis lost: Retry (4/20) in 1.00 second. 
+2025-08-27 07:43:09,430 - z.396 - Connection to Redis lost: Retry (5/20) in 1.00 second. 
+2025-08-27 08:34:35,882 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-08-27 08:34:41,984 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-08-27 08:34:52,038 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Otto\scraperO.py changed, reloading. 
+2025-08-27 08:35:06,118 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:09,278 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:12,441 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:19,718 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:24,748 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:39,941 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:42,885 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:45,873 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:48,505 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:35:51,530 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Saturn\scraperS.py changed, reloading. 
+2025-08-27 08:45:21,517 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\Maerkte\Main\Main.py changed, reloading. 
+2025-08-27 08:45:31,280 - z.253 - Not Found: /favicon.ico 
+2025-08-27 08:45:54,280 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 08:50:11,710 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:50:16,832 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:51:06,382 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 08:55:10,915 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:55:13,871 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:55:18,856 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 08:55:38,630 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:55:44,411 - z.265 - C:\Users\musta\WebScraperProjekt\web_scraper_website\web_scraper\views.py changed, reloading. 
+2025-08-27 08:57:07,880 - z.253 - Not Found: /favicon.ico 
+2025-08-27 08:57:47,564 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:19:21,150 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:26:22,683 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:26:25,007 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:26:35,727 - z.323 - eingaben(IPAD,1,{}) - no products available on page 
+2025-08-27 09:26:58,550 - z.253 - Not Found: /favicon.ico 
+2025-08-27 09:31:34,077 - z.253 - Not Found: /favicon.ico 
+2025-08-27 09:31:39,417 - z.253 - Not Found: /favicon.ico 
+2025-08-27 09:37:21,581 - z.253 - Not Found: /favicon.ico 
+2025-08-27 09:38:18,206 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:40:02,752 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:40:04,523 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-27 09:40:04,812 - z.253 - Not Found: /favicon.ico 
+2025-08-27 09:53:24,967 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-08-28 07:55:07,908 - z.253 - Not Found: /favicon.ico 
+2025-08-28 07:55:28,551 - z.323 - eingaben(ipad,1,{}) - no products available on page 
+2025-08-28 07:55:48,947 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-28 08:01:12,268 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 
+2025-08-28 08:23:57,044 - z.253 - Not Found: /favicon.ico 
+2025-08-28 08:33:03,863 - z.253 - Not Found: /.well-known/appspecific/com.chrome.devtools.json 

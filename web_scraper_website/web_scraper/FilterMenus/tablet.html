@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+     
+  <!--Anfang Slide-->
+   <div class="standardSlide introSlide"  id="slideInStandard">
+     
+     <p style="font-size:30px;color:rgb(244, 242, 242);padding-left:50px">Filter Menu</p>
+ 
+     <!--Filter-->
+     
+     <button class="ButtonDesign" onmouseout="showNot(event)" onmouseover="show(event,'normal')" data-slidemenu="filterSlide" onclick="ButtonClickHandling(filter_menu)" id="filter_button">
+         <p class="textDesign">Filter</p>               
+     </button>
+     
+     <!--Preis--> 
+     <button class="ButtonDesign" onmouseout="showNot(event)" onmouseover="show(event,'normal')" data-slidemenu="PriceSlide" onclick="ButtonClickHandling(preise_menu)" id="preise_button">
+        <p class="textDesign" >Preis</p>     
+     </button>
+     
+     <!--Bewertungen-->
+     <button class="ButtonDesign" style="position:relative" onmouseout="showNot(event)" onmouseover="show(event,'normal')" data-slidemenu="RatingSlide"  onclick="ButtonClickHandling(bewertungen_menu)" id="bewertungen_button">
+       <p class="textDesign" >Bewertungen</p>    
+     </button>
+ 
+     <!--Märkte-->
+     <button class="ButtonDesign" style="position:relative" onmouseout="showNot(event)" onmouseover="show(event,'big')" data-slidemenu="MärkteSlide" onclick="ButtonClickHandling(märkte_menu)" id="märkte_button">
+       <p class="textDesign" >Märkte</p>   
+     </button>
+ 
+     <!--Speicherkapazität-->
+     <button class="ButtonDesign" id="speicherKap_button" onmouseout="showNot(event)" onmouseover="show(event,'normal')" data-slidemenu="SpeicherKapSlide" onclick="ButtonClickHandling(speicherKap_menu)">
+       <p class="textDesign" >Speicherkapazität</p>  
+     </button>
+ 
+     <!--Marken-->
+     <button class="ButtonDesign" style="position:relative" onmouseout="showNot(event)" onmouseover="show(event,'big')" data-slidemenu="MarkenSlide" onclick="ButtonClickHandling(marken_menu)" id="marken_button">
+       <p class="textDesign" >Marken</p>
+     </button>
+     
+     
+  
+      <!--ChoosenFilter-->
+     <div class="Choosenfilter" id="showChoosenFilter">
+ 
+     </div>
+ 
+     <!-- alle löschen und submit-->
+     <div class="submitDiv" id="submitDiv">
+       <p class="alleLöschen" id="alleLöschen" onclick="reset()">Alle löschen(1)</p>  
+       <button class="submitFilter" onclick="startScraping()">submit</button>
+       
+      </div>
+     
+   
+     
+     
+   </div>
+ 
+   <div class="standardSlide" id="filterSlide">
+     <i class="fa-solid fa-filter positioningIcon"></i>
+     <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="filter_menu"></i>
+     <h1 class="changingText" id="aktuelle_filter">Topseller</h1>
+ 
+     <div  data-menu="filter" id="filter_menu">
+      <p class="filter">Topseller</p>
+      <p class="filter" >Preis: aufsteigend</p>
+      <p class="filter">Preis: absteigend</p>
+      <p class="filter">Bewertungen</p>
+     </div>
+ 
+   </div>
+ 
+ 
+   <div class="standardSlide" id="PriceSlide">
+     <i class="fa-solid fa-dollar-sign positioningIcon" style="font-size:25px"></i>
+       <h1 class="changingText" id="changingPrice">0€ - 9999€</h1>
+       <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="preise_menu"></i>
+ 
+       <div data-menu="preise" id="preise_menu">
+         <div class="price-input">
+          <div style="position:relative">
+            <p class="preise_input_von">Von(€)</p>
+            <input class="preise_input" id="inputMin" min="0" max="9999" value="0"  type="number" >
+          </div>
+         <div class="separator">-</div>
+           <div class="ms-2" style="position:relative">
+            <p class="preise_input_von">Bis(€)</p>
+            <input class="preise_input" id="inputMax" min="0" max="9999" value="9999" type="number">
+           </div>
+             
+       </div>
+         <!--rangeSlider-->
+       <div class="RangeSliderBox">
+         <div style="padding-left:5px">
+           <div class="slider">
+             <div class="progress" id="test"></div>
+           </div>
+           <input class="PriceRanges" type="range" id="MinRange" min="0" max="9999" value="0">
+           <input class="PriceRanges" type="range" id="MaxRange" min="0" max="9999" value="9999">
+         </div>
+       </div>
+         
+         
+         <!--PriceToggle-->
+         <div class="priceToggle"> 
+           <span class="fw-bold">Reduzierte Artikel</span>
+           <input type="checkbox" id="preisToggle" hidden >
+           <label class="PreisToggle ms-1" onclick="toggle(event)"></label>
+         </div>
+   </div> 
+   </div>
+    
+   <div class="standardSlide RatingSlide" id="RatingSlide">
+     <i class="fa-solid fa-star positioningIcon"></i>
+     <h1 class="changingText" id="changingRating">Alle Bewertungen</h1>
+     <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="bewertungen_menu"></i>
+ 
+     <div id="bewertungen_menu">
+       <!--5-->
+       <input class="d-none" type="radio" id="rating5" name="sterne" onclick="addingRating(event)">
+       <label for="rating5">
+         <span class="RatingImages">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+         </span>
+         <span class="undMehrSize">
+           & mehr
+         </span>          
+       </label>
+ 
+       <!--4-->
+       <input class="d-none" type="radio" id="rating4" name="sterne" onclick="addingRating(event)">
+       <label for="rating4">
+        <span class="RatingImages">
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+        </span>
+        <span class="undMehrSize">
+         & mehr
+        </span>
+       </label>
+ 
+       <!--3-->
+       <input class="d-none" type="radio" id="rating3" name="sterne" onclick="addingRating(event)">
+       <label for="rating3">
+         <span class="RatingImages">
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         
+        </span>
+        <span class="undMehrSize">
+         & mehr
+        </span>
+       </label>
+       
+       <!--2-->
+       <input class="d-none" type="radio" id="rating2" name="sterne" onclick="addingRating(event)">
+       <label for="rating2">
+         <span class="RatingImages">
+           <i class="fa-solid fa-star"></i>
+           <i class="fa-solid fa-star"></i>
+           <i class="fa-regular fa-star"></i>
+           <i class="fa-regular fa-star"></i>
+           <i class="fa-regular fa-star"></i>
+         </span>
+         <span class="undMehrSize">
+           & mehr
+         </span>  
+       </label>
+ 
+       <!--1-->
+       <input class="d-none" type="radio" id="rating1" name="sterne" onclick="addingRating(event)">
+       <label for="rating1">
+         <span class="RatingImages">
+         <i class="fa-solid fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+         <i class="fa-regular fa-star"></i>
+        </span>
+        <span class="undMehrSize">
+         & mehr
+        </span>
+       </label>
+ 
+       <!--alle Bewertungen-->
+       <input class="d-none" type="radio" id="alleRating" name="sterne" onclick="addingRating(event)" checked="true">
+       <label for="alleRating" style="font-size:20px">Alle Bewertungen</label>
+      
+     </div>
+   </div>
+   
+   <div class="standardSlide BigSlide" id="MärkteSlide">
+     <i class="fa-solid fa-shop positioningIconBig"></i>
+     <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="märkte_menu"></i>
+ 
+     <div class="märkteMarkenSlide" data-menu="märkte"  id="märkte_menu" >
+       
+       <!--Märkte-search-bar-->
+       <div class="searchBar" id="search_bar_märkte">
+         <input class="märkte-input" type="text" id="searchBarInput" autocomplete="off">
+         <span class="FakePlaceHolder">Märkte suchen</span>
+         <span style="visibility:hidden;position:absolute;display:flex;justify-content:center ;width:40px; right:8px;top:3px;color:gray;cursor:pointer;" id="search_kreuz">x</span>
+ 
+         <!--suchvorschläge-->
+         <div style="display:none" id="suchvorschlägeDisplay">
+           <ul class="suchvorschläge" id="suchvorschläge">
+        
+           </ul>
+         </div>
+         <p class="no_results" style="display:none" id="no_results">no results</p>
+ 
+         <!--Toggle-Button-->
+        <div class="posControll"> 
+         <input type="checkbox" id="märkte_alles_auswählen" hidden >
+         <label class="märkte_alles_auswählen_label ms-1" onclick="checken(event,märkte_boxen)"></label>
+        </div>
+ 
+       </div>
+        
+ 
+       <!--Meine-Märkte-->
+       <div style="position:relative">
+         <p style="padding:4px;border-radius:5px;background-color:rgb(217, 187, 141);position:absolute;top:-35px;left:12px"><span id="märkte_zähler">0</span> von 50 Märkten</p>
+         <i id="trashcan" onclick="deleteAll()" class="fa-solid fa-trash" style="position:absolute;left:159px;top:-28px;cursor:pointer"></i>
+         
+         
+        
+        <div class="ausgewählt_märkte" id="ausgewählte_märkte" style="height:50px;width:400px">
+         
+         
+         <div id="meine_märkte" class="meine_märkteDiv">      
+         </div>  
+ 
+         
+         <div style="position:relative">
+         <span class="Anzeigen" style="visibility:hidden" id="showMoreText">alle anzeigen</span>
+         </div> 
+       
+        
+        </div>
+       </div>
+       <!--Meine-Märkte-Ende-->
+ 
+       <!--Gesuchte-Märkte-->
+       <div class="gesuchte_märkte d-none" id="gesuchte_märkte">
+         <!--inhalt-->
+         <div style="position:relative">  
+          <h1 style="display:inline-block" id="search_value">User eingabe:</h1>
+          <p class="gesuchte_märkte_button" id="gesuchte_märkte_button" onclick="entfernen(event)">x</p>           
+         </div>
+ 
+         <div id="gesuchte_märkteInhalt" >
+ 
+         </div>  
+         <!--inhalt-Ende-->      
+       </div>
+ 
+      <!--alle Märkte Anfang-->
+      <div class="alleMärkteDiv">
+       <div class="linie"></div>
+      
+       <!--Märkte-Boxen-A-->
+       <h1 class="ms-2" style="margin-top:50px">A</h1>
+       <div id="märkte_boxen_a">
+        <p class="filter_m p-2" id="one_market" onclick="märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)" data-name="Saturn" data-MenuBox="märkte"> 
+           Saturn
+           <input type="checkbox" id="one_market_checkbox" hidden>
+           <label class="checkmark" id="one_market_label" ></label> 
+        </p>
+ 
+        <p class="filter_m p-2" id="two_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="Temu" data-MenuBox="märkte">
+         Temu
+         <input type="checkbox" id="two_market_checkbox" hidden>
+         <label class="checkmark" id="two_market_label"></label>
+        </p>
+ 
+        <p class="filter_m p-2" id="three_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="Zalando" data-MenuBox="märkte" >
+         Zalando
+         <input type="checkbox" id="three_market_checkbox" hidden>
+         <label class="checkmark" id="three_market_label"></label>
+        </p>
+ 
+        <p class="filter_m p-2" id="four_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="Otto" data-MenuBox="märkte">
+         Otto
+         <input type="checkbox" id="four_market_checkbox" hidden>
+         <label class="checkmark" id="four_market_label"></label>
+        </p>
+ 
+        <p class="filter_m p-2" id="five_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)" data-name="Amazon" data-MenuBox="märkte">
+         Amazon
+         <input type="checkbox" id="five_market_checkbox" hidden>
+         <label class="checkmark" id="five_market_label"></label>
+        </p>
+ 
+        <p class="filter_m p-2" id="six_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="Refurbished" data-MenuBox="märkte">
+        refurbished
+         <input type="checkbox" id="six_market_checkbox" hidden>
+         <label class="checkmark" id="six_market_label"></label>
+        </p>
+ 
+        <p class="filter_m p-2 " id="seven_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="Kaufland" data-MenuBox="märkte">
+         kaufland
+         <input type="checkbox" id="seven_market_checkbox" hidden>
+         <label class="checkmark" id="seven_market_label"></label>
+        </p>
+       </div>
+ 
+       
+       <!--Märkte-Boxen-B-->
+       <h1 class="ms-2 mt-3">B</h1>
+       <div id"märkte_boxen_b">
+        
+ 
+          <p class="filter_m p-2" id="eight_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="markt" data-MenuBox="märkte">
+           markt
+           <input type="checkbox" id="eight_market_checkbox" hidden>
+           <label class="checkmark" id="eight_market_label"></label>
+          </p>
+ 
+          <p class="filter_m p-2 " id="nine_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="markt_a" data-MenuBox="märkte">
+           markt_a
+           <input type="checkbox" id="nine_market_checkbox" hidden>
+           <label class="checkmark" id="nine_market_label"></label>
+          </p>
+ 
+          <p class="filter_m p-2" id="ten_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)" data-name="markt_b" data-MenuBox="märkte">
+           markt_b
+           <input type="checkbox" id="ten_market_checkbox" hidden>
+           <label class="checkmark" id="ten_market_label"></label>
+          </p>
+ 
+          <p class="filter_m p-2 " id="eleven_market" onclick=" märkte_checken(event,märkte_zähler,meine_märkte,toggle_button,ausgewählte_box,showMoreText)"  data-name="markt_c" data-MenuBox="märkte">
+          markt_c
+           <input type="checkbox" id="eleven_market_checkbox"  hidden>
+           <label class="checkmark" id="eleven_market_label"></label>
+          </p>
+ 
+       </div>
+       
+       
+ 
+      </div> 
+      <!--alle Märkte Ende-->
+       
+     </div>
+ 
+   </div>
+   
+   <div class="standardSlide" id="SpeicherKapSlide">
+     <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="speicherKap_menu"></i>
+     <i class="fa-solid fa-sd-card positioningIcon"></i>
+     <h1 class="changingText" id="changingSpeicherKap">alle GB-Optionen</h1>
+ 
+     <div class="speicherKapMenu" id="speicherKap_menu">
+       <div>
+         <input type="radio" id="SFgb" onclick="addingSpeicherKap(event)" name="speicherKap" hidden> <!--SF-> Six_Four (64GB)-->
+         <label for="SFgb"  id="customCheckboxSFgb"><span>64GB <small class="undMehr">&mehr</small>  </span></label>
+       </div>
+   
+       <div>
+        <input type="radio" id="OTEgb" onclick="addingSpeicherKap(event)" name="speicherKap" hidden> <!--OTE-> One_Two_Eight (128GB)-->
+        <label for="OTEgb" id="customCheckboxOTEgb"><span>128GB <small class="undMehr">&mehr</small> </span></label>
+       </div>
+   
+       <div>
+        <input type="radio" id="ZFSgb" onclick="addingSpeicherKap(event)" name="speicherKap" hidden> <!--ZFs-> Two_Five_Six (256GB)-->
+        <label for="ZFSgb" id="customCheckboxZFSgb"><span>256GB <small class="undMehr">&mehr</small>  </span></label>
+       </div>
+   
+       <div>
+         <input type="radio" id="FOTgb" onclick="addingSpeicherKap(event)" name="speicherKap" hidden> <!--ZFs-> Five_One_Two (512GB)-->
+         <label for="FOTgb" id="customCheckboxFOTgb"><span>512GB <small class="undMehr">&mehr</small>  </span></label>
+       </div>
+   
+       <div>
+         <input type="radio" id="Ogb" onclick="addingSpeicherKap(event)" name="speicherKap" hidden> <!--O-> One (1TB)-->
+         <label for="Ogb" id="customCheckboxOgb"><span>1TB <small class="undMehr">&mehr</small>  </span></label>
+       </div>
+ 
+       <div>
+         <input type="radio" id="allegb" name="speicherKap" onclick="addingSpeicherKap(event)" hidden checked> <!-- alle GB-Optionen-->
+         <label for="allegb" id="customCheckboxALLEgb"><span style="font-size:18px;font-weight:600">alle GB-Optionen</span></label>
+         
+       </div>
+     </div>
+     
+   </div>
+ 
+ 
+   <div class="standardSlide BigSlide" id="MarkenSlide"> 
+     <i class="fa-solid fa-arrow-left arrowLeftCorner" onclick="ArrowLeftSlide(event)" data-detach="marken_menu"></i>
+     <i class="fa-solid fa-copyright positioningIconBig" style="font-size:30px"></i>
+ 
+     <div class="märkteMarkenSlide" data-menu="marken"  id="marken_menu" >
+ 
+       <!--Marken-search-bar-->     
+        <div class="searchBar" style="height:35px" id="search_bar_marken">
+         
+         <!--<i class="fa-solid fa-magnifying-glass" style="cursor:pointer" id="lupe"></i-->
+         <input class="märkte-input" type="text" id="searchBarInputMk" autocomplete="off">
+         <span class="FakePlaceHolder">Marken suchen</span>
+         <span style="visibility:hidden;position:absolute;display:flex;justify-content:center ;width:40px; right:8px;top:3px;color:gray;cursor:pointer;" id="search_kreuzMk">x</span>
+         <!--suchvorschläge-->
+         <div style="display:none" id="suchvorschlägeDisplayMk">
+           <ul class="suchvorschläge" id="suchvorschlägeMk">
+           </ul>
+         </div>
+         <p class="no_results" style="display:none" id="no_resultsMk">no results</p>
+ 
+         <!--Toggle-Button-->
+         <div class="posControll"> 
+          <input type="checkbox" id="märkte_alles_auswählenMk" hidden >
+          <label class="märkte_alles_auswählen_label ms-1" onclick="checken(event,marken_boxen)"></label>
+         </div>   
+ 
+        </div>
+        
+ 
+ 
+ 
+         
+       <div style="position:relative">
+         <p style="padding:4px;border-radius:5px;background-color:rgb(217, 187, 141);position:absolute;top:-35px;left:12px"><span id="markenZähler">0</span> von 50 Märkten</p>
+         <i id="trashcanMk" onclick="deleteAllMk()" class="fa-solid fa-trash" style="position:absolute;left:159px;top:-28px;cursor:pointer"></i>
+         
+         
+        
+        <div class="ausgewählt_märkte" id="ausgewählte_märkteMk" style="height:50px;width:400px">
+         
+         
+         <div id="meine_märkteMk" class="d-flex flex-wrap">
+              
+         </div>  
+ 
+         <div style="position:relative">
+         <span class="Anzeigen" style="visibility:hidden" id="showMoreTextMk">alle anzeigen</span>
+         </div> 
+       
+        
+        </div>
+       </div>
+     
+ 
+      
+       <div class="gesuchte_märkte d-none" id="gesuchte_märkteMk">
+         <!--inhalt-->
+         <div>
+           
+          <h1 style="display:inline-block" id="search_valueMk">User eingabe:</h1>
+          <p class="gesuchte_märkte_button" id="gesuchte_märkte_buttonMk" onclick="entfernen(event)">X</p>
+         
+         </div >
+ 
+         <div id="gesuchte_märkteInhaltMk" >
+ 
+         </div>
+ 
+       </div>
+ 
+ 
+      <!--alle Marken Div-->
+      <div class="alleMärkteDiv">
+       <div class="linie"></div>
+     
+       <!--Märkte-Boxen-A-->
+       <h1 class="ms-2" style="margin-top:50px">A</h1>
+       <div id="marken_boxen_a">
+       <p class="filter_m p-2" id="one_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Apple" data-MenuBox="marken"> 
+         Apple
+         <input type="checkbox" id="one_marke_checkbox" hidden>
+         <label class="checkmark" id="one_marke_label" ></label> 
+       </p>
+
+       <p class="filter_m p-2" id="two_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Acepad" data-MenuBox="marken">
+         Acepad
+         <input type="checkbox" id="two_marke_checkbox" hidden>
+         <label class="checkmark" id="two_marke_label"></label>
+       </p>
+
+<p class="filter_m p-2" id="three_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Agm by Beafon" data-MenuBox="marken">
+  Agm by Beafon
+  <input type="checkbox" id="three_marke_checkbox" hidden>
+  <label class="checkmark" id="three_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="four_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="AILIHEN" data-MenuBox="marken">
+  AILIHEN
+  <input type="checkbox" id="four_marke_checkbox" hidden>
+  <label class="checkmark" id="four_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="five_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Airturn" data-MenuBox="marken">
+  Airturn
+  <input type="checkbox" id="five_marke_checkbox" hidden>
+  <label class="checkmark" id="five_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="six_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="AKG" data-MenuBox="marken">
+  AKG
+  <input type="checkbox" id="six_marke_checkbox" hidden>
+  <label class="checkmark" id="six_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="seven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Alcatel" data-MenuBox="marken">
+  Alcatel
+  <input type="checkbox" id="seven_marke_checkbox" hidden>
+  <label class="checkmark" id="seven_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="eight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ALLDOCUBE" data-MenuBox="marken">
+  ALLDOCUBE
+  <input type="checkbox" id="eight_marke_checkbox" hidden>
+  <label class="checkmark" id="eight_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="nine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ALOGIC" data-MenuBox="marken">
+  ALOGIC
+  <input type="checkbox" id="nine_marke_checkbox" hidden>
+  <label class="checkmark" id="nine_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="ten_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="alkaya." data-MenuBox="marken">
+  alkaya.
+  <input type="checkbox" id="ten_marke_checkbox" hidden>
+  <label class="checkmark" id="ten_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="eleven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Amazon" data-MenuBox="marken">
+  Amazon
+  <input type="checkbox" id="eleven_marke_checkbox" hidden>
+  <label class="checkmark" id="eleven_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twelve_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Amazon Basics" data-MenuBox="marken">
+  Amazon Basics
+  <input type="checkbox" id="twelve_marke_checkbox" hidden>
+  <label class="checkmark" id="twelve_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Anker" data-MenuBox="marken">
+  Anker
+  <input type="checkbox" id="thirteen_marke_checkbox" hidden>
+  <label class="checkmark" id="thirteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="fourteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ANTEMPER" data-MenuBox="marken">
+  ANTEMPER
+  <input type="checkbox" id="fourteen_marke_checkbox" hidden>
+  <label class="checkmark" id="fourteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="fifteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Aplic" data-MenuBox="marken">
+  Aplic
+  <input type="checkbox" id="fifteen_marke_checkbox" hidden>
+  <label class="checkmark" id="fifteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="sixteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ascrecem" data-MenuBox="marken">
+  ascrecem
+  <input type="checkbox" id="sixteen_marke_checkbox" hidden>
+  <label class="checkmark" id="sixteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="seventeen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Asus" data-MenuBox="marken">
+  Asus
+  <input type="checkbox" id="seventeen_marke_checkbox" hidden>
+  <label class="checkmark" id="seventeen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="eighteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ATTACK SHARK" data-MenuBox="marken">
+  ATTACK SHARK
+  <input type="checkbox" id="eighteen_marke_checkbox" hidden>
+  <label class="checkmark" id="eighteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="nineteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Augustin Group" data-MenuBox="marken">
+  Augustin Group
+  <input type="checkbox" id="nineteen_marke_checkbox" hidden>
+  <label class="checkmark" id="nineteen_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twenty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Auna" data-MenuBox="marken">
+  Auna
+  <input type="checkbox" id="twenty_marke_checkbox" hidden>
+  <label class="checkmark" id="twenty_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="AWOW" data-MenuBox="marken">
+  AWOW
+  <input type="checkbox" id="twentyone_marke_checkbox" hidden>
+  <label class="checkmark" id="twentyone_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ayex" data-MenuBox="marken">
+  ayex
+  <input type="checkbox" id="twentytwo_marke_checkbox" hidden>
+  <label class="checkmark" id="twentytwo_marke_label"></label>
+</p>
+
+</div>
+
+
+      <!--
+       <p class="filter_m p-2" id="two_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Samsung" data-MenuBox="marken" >
+       Samsung
+       <input type="checkbox" id="two_marke_checkbox" hidden>
+       <label class="checkmark" id="two_marke_label"></label>
+       </p>
+ 
+       <p class="filter_m p-2 " id="three_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Huawei" data-MenuBox="marken" >
+       Huawei
+       <input type="checkbox" id="three_marke_checkbox" hidden>
+       <label class="checkmark" id="three_marke_label"></label>
+       </p>
+ 
+       <p class="filter_m p-2 " id="four_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Lenovo" data-MenuBox="marken">
+       Lenovo
+       <input type="checkbox" id="four_marke_checkbox" hidden>
+       <label class="checkmark" id="four_marke_label"></label>
+       </p>
+ 
+       <p class="filter_m p-2 " id="five_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Remarkable" data-MenuBox="marken">
+       Remarkable
+       <input type="checkbox" id="five_marke_checkbox" hidden>
+       <label class="checkmark" id="five_marke_label"></label>
+       </p>
+ 
+       <p class="filter_m p-2 " id="six_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Microsoft" data-MenuBox="marken">
+       Microsoft
+       <input type="checkbox" id="six_marke_checkbox" hidden>
+       <label class="checkmark" id="six_marke_label"></label>
+       </p>
+ 
+       <p class="filter_m p-2" id="seven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Hp" data-MenuBox="marken">
+       Hp
+       <input type="checkbox" id="seven_marke_checkbox" hidden>
+       <label class="checkmark" id="seven_marke_label"></label>
+       </p>
+       </div>
+
+      -->
+
+ 
+       <!--Marken-Boxen-B-->
+       <h1 class="ms-2 mt-3">B</h1>
+       <div class="marken_boxen_b">
+
+        <p class="filter_m p-2" id="twentythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Bang & Olufsen" data-MenuBox="marken">
+  Bang & Olufsen
+  <input type="checkbox" id="twentythree_marke_checkbox" hidden>
+  <label class="checkmark" id="twentythree_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Baseus" data-MenuBox="marken">
+  Baseus
+  <input type="checkbox" id="twentyfour_marke_checkbox" hidden>
+  <label class="checkmark" id="twentyfour_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Beats by Dr. Dre" data-MenuBox="marken">
+  Beats by Dr. Dre
+  <input type="checkbox" id="twentyfive_marke_checkbox" hidden>
+  <label class="checkmark" id="twentyfive_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Belle Vous" data-MenuBox="marken">
+  Belle Vous
+  <input type="checkbox" id="twentysix_marke_checkbox" hidden>
+  <label class="checkmark" id="twentysix_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Belkin" data-MenuBox="marken">
+  Belkin
+  <input type="checkbox" id="twentyseven_marke_checkbox" hidden>
+  <label class="checkmark" id="twentyseven_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BESTTAB" data-MenuBox="marken">
+  BESTTAB
+  <input type="checkbox" id="twentyeight_marke_checkbox" hidden>
+  <label class="checkmark" id="twentyeight_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="twentynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Besttoy" data-MenuBox="marken">
+  Besttoy
+  <input type="checkbox" id="twentynine_marke_checkbox" hidden>
+  <label class="checkmark" id="twentynine_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BIGGERFIVE" data-MenuBox="marken">
+  BIGGERFIVE
+  <input type="checkbox" id="thirty_marke_checkbox" hidden>
+  <label class="checkmark" id="thirty_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BlingBin" data-MenuBox="marken">
+  BlingBin
+  <input type="checkbox" id="thirtyone_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtyone_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Black Rock" data-MenuBox="marken">
+  Black Rock
+  <input type="checkbox" id="thirtytwo_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtytwo_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="blackview" data-MenuBox="marken">
+  blackview
+  <input type="checkbox" id="thirtythree_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtythree_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="boogie board" data-MenuBox="marken">
+  boogie board
+  <input type="checkbox" id="thirtyfour_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtyfour_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Bose" data-MenuBox="marken">
+  Bose
+  <input type="checkbox" id="thirtyfive_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtyfive_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Bothergu" data-MenuBox="marken">
+  Bothergu
+  <input type="checkbox" id="thirtysix_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtysix_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BREE" data-MenuBox="marken">
+  BREE
+  <input type="checkbox" id="thirtyseven_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtyseven_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BRAIDOL" data-MenuBox="marken">
+  BRAIDOL
+  <input type="checkbox" id="thirtyeight_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtyeight_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="thirtynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BMW" data-MenuBox="marken">
+  BMW
+  <input type="checkbox" id="thirtynine_marke_checkbox" hidden>
+  <label class="checkmark" id="thirtynine_marke_label"></label>
+</p>
+
+<p class="filter_m p-2" id="forty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="BUFO" data-MenuBox="marken">
+  BUFO
+  <input type="checkbox" id="forty_marke_checkbox" hidden>
+  <label class="checkmark" id="forty_marke_label"></label>
+</p>
+
+</div>
+
+
+<h1 class="ms-2 mt-3">C</h1>
+<div id="marken_boxen_c">
+    <p class="filter_m p-2" id="fortyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Cadorabo" data-MenuBox="marken">
+        Cadorabo
+        <input type="checkbox" id="fortyone_marke_checkbox" hidden>
+        <label class="checkmark" id="fortyone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Canenco" data-MenuBox="marken">
+        Canenco
+        <input type="checkbox" id="fortytwo_marke_checkbox" hidden>
+        <label class="checkmark" id="fortytwo_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Case Logic" data-MenuBox="marken">
+        Case Logic
+        <input type="checkbox" id="fortythree_marke_checkbox" hidden>
+        <label class="checkmark" id="fortythree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Catalyst" data-MenuBox="marken">
+        Catalyst
+        <input type="checkbox" id="fortyfour_marke_checkbox" hidden>
+        <label class="checkmark" id="fortyfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Cerbery" data-MenuBox="marken">
+        Cerbery
+        <input type="checkbox" id="fortyfive_marke_checkbox" hidden>
+        <label class="checkmark" id="fortyfive_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Cellularline" data-MenuBox="marken">
+        Cellularline
+        <input type="checkbox" id="fortysix_marke_checkbox" hidden>
+        <label class="checkmark" id="fortysix_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CHUWI" data-MenuBox="marken">
+        CHUWI
+        <input type="checkbox" id="fortyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="fortyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CiTYCASE" data-MenuBox="marken">
+        CiTYCASE
+        <input type="checkbox" id="fortyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="fortyeight_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fortynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CLM-Tech" data-MenuBox="marken">
+        CLM-Tech
+        <input type="checkbox" id="fortynine_marke_checkbox" hidden>
+        <label class="checkmark" id="fortynine_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fifty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="cofi1453" data-MenuBox="marken">
+        cofi1453
+        <input type="checkbox" id="fifty_marke_checkbox" hidden>
+        <label class="checkmark" id="fifty_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="COFI 1453" data-MenuBox="marken">
+        COFI 1453
+        <input type="checkbox" id="fiftyone_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftyone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="coocazoo" data-MenuBox="marken">
+        coocazoo
+        <input type="checkbox" id="fiftytwo_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftytwo_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CoolGadget" data-MenuBox="marken">
+        CoolGadget
+        <input type="checkbox" id="fiftythree_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftythree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CoverKingz" data-MenuBox="marken">
+        CoverKingz
+        <input type="checkbox" id="fiftyfour_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftyfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Creative" data-MenuBox="marken">
+        Creative
+        <input type="checkbox" id="fiftyfive_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftyfive_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CROSSCALL" data-MenuBox="marken">
+        CROSSCALL
+        <input type="checkbox" id="fiftysix_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftysix_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Crumpler" data-MenuBox="marken">
+        Crumpler
+        <input type="checkbox" id="fiftyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="fiftyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="CULTZEN" data-MenuBox="marken">
+        CULTZEN
+        <input type="checkbox" id="fiftyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftyeight_marke_label"></label>
+    </p>
+</div>
+
+
+
+<h1 class="ms-2 mt-3">D</h1>
+<div id="marken_boxen_d">
+    <p class="filter_m p-2" id="fiftynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DataVideo" data-MenuBox="marken">
+        DataVideo
+        <input type="checkbox" id="fiftynine_marke_checkbox" hidden>
+        <label class="checkmark" id="fiftynine_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Dbramante1928" data-MenuBox="marken">
+        Dbramante1928
+        <input type="checkbox" id="sixty_marke_checkbox" hidden>
+        <label class="checkmark" id="sixty_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DECODED" data-MenuBox="marken">
+        DECODED
+        <input type="checkbox" id="sixtyone_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtyone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Denon" data-MenuBox="marken">
+        Denon
+        <input type="checkbox" id="sixtytwo_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtytwo_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Denver" data-MenuBox="marken">
+        Denver
+        <input type="checkbox" id="sixtythree_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtythree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Denver Electronics" data-MenuBox="marken">
+        Denver Electronics
+        <input type="checkbox" id="sixtyfour_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtyfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DICOTA" data-MenuBox="marken">
+        DICOTA
+        <input type="checkbox" id="sixtyfive_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtyfive_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Displine" data-MenuBox="marken">
+        Displine
+        <input type="checkbox" id="sixtysix_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtysix_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Displex" data-MenuBox="marken">
+        Displex
+        <input type="checkbox" id="sixtyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DOOGEE" data-MenuBox="marken">
+        DOOGEE
+        <input type="checkbox" id="sixtyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtyeight_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="sixtynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DRAKENSBERG" data-MenuBox="marken">
+        DRAKENSBERG
+        <input type="checkbox" id="sixtynine_marke_checkbox" hidden>
+        <label class="checkmark" id="sixtynine_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="seventyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Dunmoon" data-MenuBox="marken">
+        Dunmoon
+        <input type="checkbox" id="seventyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="seventyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="seventyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="DURABLE" data-MenuBox="marken">
+        DURABLE
+        <input type="checkbox" id="seventyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="seventyeight_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="seventynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Dux Ducis" data-MenuBox="marken">
+        Dux Ducis
+        <input type="checkbox" id="seventynine_marke_checkbox" hidden>
+        <label class="checkmark" id="seventynine_marke_label"></label>
+    </p>
+</div>
+
+<h1 class="ms-2 mt-3">E</h1>
+<div id="marken_boxen_e">
+    <p class="filter_m p-2" id="eighty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="EAZY CASE" data-MenuBox="marken">
+        EAZY CASE
+        <input type="checkbox" id="eighty_marke_checkbox" hidden>
+        <label class="checkmark" id="eighty_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ECG" data-MenuBox="marken">
+        ECG
+        <input type="checkbox" id="eightyone_marke_checkbox" hidden>
+        <label class="checkmark" id="eightyone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Edifier®" data-MenuBox="marken">
+        Edifier®
+        <input type="checkbox" id="eightytwo_marke_checkbox" hidden>
+        <label class="checkmark" id="eightytwo_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="EGO" data-MenuBox="marken">
+        EGO
+        <input type="checkbox" id="eightythree_marke_checkbox" hidden>
+        <label class="checkmark" id="eightythree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Einhell" data-MenuBox="marken">
+        Einhell
+        <input type="checkbox" id="eightyfour_marke_checkbox" hidden>
+        <label class="checkmark" id="eightyfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Elekta" data-MenuBox="marken">
+        Elekta
+        <input type="checkbox" id="eightyfive_marke_checkbox" hidden>
+        <label class="checkmark" id="eightyfive_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ELECTRO-VOICE" data-MenuBox="marken">
+        ELECTRO-VOICE
+        <input type="checkbox" id="eightysix_marke_checkbox" hidden>
+        <label class="checkmark" id="eightysix_marke_label"></label>
+    </p>
+</div>
+
+
+
+<h1 class="ms-2 mt-3">F</h1>
+<div id="marken_boxen_f">
+    <p class="filter_m p-2" id="eightyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Fairphone" data-MenuBox="marken">
+        Fairphone
+        <input type="checkbox" id="eightyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="eightyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="FEONAL" data-MenuBox="marken">
+        FEONAL
+        <input type="checkbox" id="eightyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="eightyeight_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="eightynine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="FELIXLEO" data-MenuBox="marken">
+        FELIXLEO
+        <input type="checkbox" id="eightynine_marke_checkbox" hidden>
+        <label class="checkmark" id="eightynine_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetymarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Fine Life Pro" data-MenuBox="marken">
+        Fine Life Pro
+        <input type="checkbox" id="ninetymarke_checkbox" hidden>
+        <label class="checkmark" id="ninetymarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetyonemarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Fintie" data-MenuBox="marken">
+        Fintie
+        <input type="checkbox" id="ninetyonemarke_checkbox" hidden>
+        <label class="checkmark" id="ninetyonemarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetytwomarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Fire" data-MenuBox="marken">
+        Fire
+        <input type="checkbox" id="ninetytwomarke_checkbox" hidden>
+        <label class="checkmark" id="ninetytwomarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetythreemarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="flat.design" data-MenuBox="marken">
+        flat.design
+        <input type="checkbox" id="ninetythreemarke_checkbox" hidden>
+        <label class="checkmark" id="ninetythreemarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetyfourmarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Forever" data-MenuBox="marken">
+        Forever
+        <input type="checkbox" id="ninetyfourmarke_checkbox" hidden>
+        <label class="checkmark" id="ninetyfourmarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetyfivemarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Fossil" data-MenuBox="marken">
+        Fossil
+        <input type="checkbox" id="ninetyfivemarke_checkbox" hidden>
+        <label class="checkmark" id="ninetyfivemarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetysixmarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="FroShop" data-MenuBox="marken">
+        FroShop
+        <input type="checkbox" id="ninetysixmarke_checkbox" hidden>
+        <label class="checkmark" id="ninetysixmarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="ninetysevenmarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Futurea" data-MenuBox="marken">
+        Futurea
+        <input type="checkbox" id="ninetysevenmarke_checkbox" hidden>
+        <label class="checkmark" id="ninetysevenmarke_label"></label>
+    </p>
+</div>
+
+<h1 class="ms-2 mt-3">G</h1>
+<div id="marken_boxen_g">
+    <p class="filter_m p-2" id="hundredmarke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Gear4" data-MenuBox="marken">
+        Gear4
+        <input type="checkbox" id="hundredmarke_checkbox" hidden>
+        <label class="checkmark" id="hundredmarke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Gembird" data-MenuBox="marken">
+        Gembird
+        <input type="checkbox" id="hundredone_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Genesis" data-MenuBox="marken">
+        Genesis
+        <input type="checkbox" id="hundredtwo_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwo_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredthree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Gecko Covers" data-MenuBox="marken">
+        Gecko Covers
+        <input type="checkbox" id="hundredthree_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredthree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Goldstern-Tech" data-MenuBox="marken">
+        Goldstern-Tech
+        <input type="checkbox" id="hundredfour_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="GOLLA" data-MenuBox="marken">
+        GOLLA
+        <input type="checkbox" id="hundredfive_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredfive_marke_label"></label>
+    </p>
+
+ </div>  
+
+
+ <h1 class="ms-2 mt-3">H</h1>
+<div id="marken_boxen_h">
+    <p class="filter_m p-2" id="hundredseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="H-basics" data-MenuBox="marken">
+        H-basics
+        <input type="checkbox" id="hundredseven_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Haehne" data-MenuBox="marken">
+        Haehne
+        <input type="checkbox" id="hundredeight_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredeight_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundrednine_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Hagor" data-MenuBox="marken">
+        Hagor
+        <input type="checkbox" id="hundrednine_marke_checkbox" hidden>
+        <label class="checkmark" id="hundrednine_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredten_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="HAN" data-MenuBox="marken">
+        HAN
+        <input type="checkbox" id="hundredten_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredten_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredeleven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Hama" data-MenuBox="marken">
+        Hama
+        <input type="checkbox" id="hundredeleven_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredeleven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwelve_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="HASACOOL" data-MenuBox="marken">
+        HASACOOL
+        <input type="checkbox" id="hundredtwelve_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwelve_marke_label"></label>
+    </p>
+</div>
+
+<h1 class="ms-2 mt-3">I</h1>
+<div id="marken_boxen_i">
+    <p class="filter_m p-2" id="hundredthirteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="iKF" data-MenuBox="marken">
+        iKF
+        <input type="checkbox" id="hundredthirteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredthirteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredfourteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Ik Multimedia" data-MenuBox="marken">
+        Ik Multimedia
+        <input type="checkbox" id="hundredfourteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredfourteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredfifteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Inateck" data-MenuBox="marken">
+        Inateck
+        <input type="checkbox" id="hundredfifteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredfifteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredsixteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Incipio" data-MenuBox="marken">
+        Incipio
+        <input type="checkbox" id="hundredsixteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredsixteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredseventeen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="ISFORT GmbH & Co. KG" data-MenuBox="marken">
+        ISFORT GmbH & Co. KG
+        <input type="checkbox" id="hundredseventeen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredseventeen_marke_label"></label>
+    </p>
+</div>
+
+<h1 class="ms-2 mt-3">J</h1>
+<div id="marken_boxen_j">
+    <p class="filter_m p-2" id="hundredeighteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Jabra" data-MenuBox="marken">
+        Jabra
+        <input type="checkbox" id="hundredeighteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredeighteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundrednineteen_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="JBL" data-MenuBox="marken">
+        JBL
+        <input type="checkbox" id="hundrednineteen_marke_checkbox" hidden>
+        <label class="checkmark" id="hundrednineteen_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwenty_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="JOOP!" data-MenuBox="marken">
+        JOOP!
+        <input type="checkbox" id="hundredtwenty_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwenty_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentyone_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="JT Berlin" data-MenuBox="marken">
+        JT Berlin
+        <input type="checkbox" id="hundredtwentyone_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentyone_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentytwo_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="JVmoebel" data-MenuBox="marken">
+        JVmoebel
+        <input type="checkbox" id="hundredtwentytwo_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentytwo_marke_label"></label>
+    </p>
+</div>
+
+<h1 class="ms-2 mt-3">K</h1>
+<div id="marken_boxen_k">
+    <p class="filter_m p-2" id="hundredtwentythree_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="KADYBE" data-MenuBox="marken">
+        KADYBE
+        <input type="checkbox" id="hundredtwentythree_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentythree_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentyfour_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Karcher" data-MenuBox="marken">
+        Karcher
+        <input type="checkbox" id="hundredtwentyfour_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentyfour_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentyfive_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Karl Lagerfeld" data-MenuBox="marken">
+        Karl Lagerfeld
+        <input type="checkbox" id="hundredtwentyfive_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentyfive_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentysix_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="KENSINGTON" data-MenuBox="marken">
+        KENSINGTON
+        <input type="checkbox" id="hundredtwentysix_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentysix_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentyseven_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Kela" data-MenuBox="marken">
+        Kela
+        <input type="checkbox" id="hundredtwentyseven_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentyseven_marke_label"></label>
+    </p>
+
+    <p class="filter_m p-2" id="hundredtwentyeight_marke" onclick="märkte_checken(event,markenZähler,meine_märkteMk,toggleButtonMk,ausgewählte_boxMk,showMoreTextMk)" data-name="Kevin Frotscher (FroShop)" data-MenuBox="marken">
+        Kevin Frotscher (FroShop)
+        <input type="checkbox" id="hundredtwentyeight_marke_checkbox" hidden>
+        <label class="checkmark" id="hundredtwentyeight_marke_label"></label>
+    </p>
+</div>
+
+
+
+
+
+
+   </div>
+      
+ 
+ 
+     </div>
+ 
+   </div>
+    
+</body>
+</html>
