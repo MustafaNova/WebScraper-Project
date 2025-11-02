@@ -5,7 +5,7 @@
 # VIRTUAL ENVIRONMENT ACTIVATE: virtualEnv/Scripts/activate
 # startordner: web_scraper_website\web_scraper
 
-#todos:
+#todos
 
 # website erste 6 produkte scrapen und wenn auf produkt clicked, soll weitere seite mit produktdetails anzeigen:
  # produktdetails seite designen produkt (https://www.saturn.de/de/product/_apple-ipad-air-wi-fi-2025-7-generation-tablet-128-gb-11-zoll-blau-2984224.html):
