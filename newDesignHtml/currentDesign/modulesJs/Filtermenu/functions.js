@@ -1854,6 +1854,7 @@ function addMissingOptions(menuType){
     btn.dispatchEvent(new MouseEvent("mouseup"))
   })
 
+
   
 
 }
@@ -1866,6 +1867,7 @@ function removeAllChoosen(menuType){
     const btn = box.querySelector(BTN_CLASS)
     btn.dispatchEvent(new MouseEvent("mouseup"))
   })
+
 
    
 }
@@ -1993,7 +1995,7 @@ export function filterResults(event, menuType){
 
 // executet when mousedown on marketGrip
 export function setupResize(e, menuType){
-  const { GRIP, MENU,set_startY, set_startHeight } = V.MENUS[menuType]
+  const { GRIP, MENU, set_startY, set_startHeight } = V.MENUS[menuType]
   e.preventDefault()
 
   GRIP.classList.add("resizeColor")  // only at resizing this color
@@ -2012,7 +2014,7 @@ export function startResize(e, menuType){
   const startHeight = isMarkt ? V.startHeight : V.startHeight_MK
  
   const dY = e.clientY - startY
-  MENU.style.height = (startHeight + dY)  + "px"
+  MENU.style.flexBasis = (startHeight + dY)  + "px"
 
 }
 

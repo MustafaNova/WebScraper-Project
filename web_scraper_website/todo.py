@@ -5,6 +5,11 @@
 # VIRTUAL ENVIRONMENT ACTIVATE: virtualEnv/Scripts/activate
 # startordner: web_scraper_website\web_scraper
 
+
+#commit(alles in ein satz zsmfassen):
+# CM open,close,resize also working at fullscreen
+
+
 #todos:
 
 # website erste 6 produkte scrapen und wenn auf produkt clicked, soll weitere seite mit produktdetails anzeigen:
@@ -12,11 +17,16 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
+    
+    # transition zu schnell bei CM schließen
+    # in CM selection auch fade in rand machen, wie märkte-menu
+    # nach öffnung flex löschen, dann bei schliesen wieder adden
     # märkte-menu => flex: 0 0 100% startzustand, dann wie mit animation öffnen CHOOSEN_ALL click
+    # CM toggle-btn clicken nW
+    # CM-selections untere box mehr platz nach unten
     # CM erst d-none, dann animation öffnen, alle auswählen btn click second-height,first-height ändert es, ist das unnötig? entfernen wenn ja
     # unten bissl freiraum bei normale window CM und fullscreen CM auch
     # fullscreen CM nach oben resizen, graue bereich muss gröser werden, bis nach oben das nur eine box oberhalt ist resizen können
-    # CM toggle clicken geht net
     # zwischen fullscreen wehcsel cm sieht man kurz animation
     # märkte/marken Slide anpassen, CM mehr nach unten, wenn CM öffnet bei fullscreen anpassen
     # chosenboxen die erste slide eingefügt werden, diese position anpassen
