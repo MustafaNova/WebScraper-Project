@@ -720,7 +720,7 @@ function resetSlide(menuType){
   GRIP.classList.remove("opacity-0")
   TOGGLE_CM.classList.replace("fa-caret-up","fa-caret-down")
   MENU.classList.remove("hideCM")
-  MENU.removeAttribute("style")
+  MENU.style.flexBasis = "" // not removeAttribute("style"), because transition also would be removed
   CM.removeAttribute("style")
   CM_SELECTIONS.removeAttribute("style")
 
@@ -1732,41 +1732,54 @@ function handleCMOpening(menuType){
 }
 
 // only one transition after that transition will be removed
-function applyTransition(menu){
-  menu.classList.add("smoothTrans")
-    
-  const onTransitionEnd = () => {
-    menu.classList.remove("smoothTrans")
-    menu.removeEventListener("transitionend",onTransitionEnd)
-  }   
-  menu.addEventListener("transitionend",onTransitionEnd)
+function applyTransition(menu, CM, action){
+
+  // 1) determine transition value
+  let transVal = 0
+  if (action == "open"){
+    transVal = 0.4
+
+  }
+  // transition proportional to size of slide
+  else if (action == "close"){
+    const baseHeight = 152  // smallest height
+    const baseTrans = 0.4   // trans for smallest Height
+    const heightDiff = CM.offsetHeight - baseHeight
+    const transAdd = heightDiff * 0.001
+    transVal = baseTrans + transAdd
+  }
+
+  console.log(transVal)
+  // 2) use this transition value
+  menu.style.transition = `all ${transVal}s ease`
+  menu.addEventListener("transitionend",()=>menu.style.transition = "", {once: true})
+  
 }
 
 // if 0 boxes available and first box will be added, adding smoothTrans so CM opens with transition
 function appendBox(curBoxCopy, menuType){
-  const { CM_SELECTIONS, MENU } = V.MENUS[menuType]
+  const { CM_SELECTIONS, CM, MENU } = V.MENUS[menuType]
 
-  const firstBox = CM_SELECTIONS.children.length == 0
+  const firstBox = CM_SELECTIONS.children.length == 0 // check condition before adding new box
   CM_SELECTIONS.appendChild(curBoxCopy)
 
   // adding first box it means you have to open CM. 
   // Opens with transition
-  if (firstBox) applyTransition(MENU)
+  if (firstBox) applyTransition(MENU, CM, "open")
   
-
 }
 
 
 function removeBox(chosenBox, menuType){
-  const { CM_SELECTIONS, MENU } = V.MENUS[menuType]
+  const { CM_SELECTIONS, MENU, CM } = V.MENUS[menuType]
 
   const lastBox = CM_SELECTIONS.children.length == 1
   chosenBox.remove()
 
   // removing the last box means you have to close CM.
   // CLoses with transition
-  if (lastBox) applyTransition(MENU)
-  
+  if (lastBox) applyTransition(MENU, CM, "close")
+    
 }
 
 
@@ -1778,6 +1791,7 @@ function addToChosenMarkets(curBox, menuType){
   const title = curBoxCopy.querySelector(".title")
   const btn_copy = curBoxCopy.querySelector(BTN_CLASS)
 
+  curBoxCopy.classList.remove("selection-box-no-hover")
   curBoxCopy.classList.remove("d-none")
   btn_copy.classList.add("chosenBtn")
   curBoxCopy.classList.add("chosenColor","chosenBorder")

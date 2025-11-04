@@ -17,12 +17,7 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-    
-    # transition zu schnell bei CM schließen
-    # in CM selection auch fade in rand machen, wie märkte-menu
-    # nach öffnung flex löschen, dann bei schliesen wieder adden
-    # märkte-menu => flex: 0 0 100% startzustand, dann wie mit animation öffnen CHOOSEN_ALL click
-    # CM toggle-btn clicken nW
+    # CM toggle-btn clicken normal und fullscreen nW
     # CM-selections untere box mehr platz nach unten
     # CM erst d-none, dann animation öffnen, alle auswählen btn click second-height,first-height ändert es, ist das unnötig? entfernen wenn ja
     # unten bissl freiraum bei normale window CM und fullscreen CM auch

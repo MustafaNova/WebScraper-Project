@@ -1150,7 +1150,7 @@ background-color:rgba(230, 179, 179, 0.84);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 17px;
+  margin-bottom: 14px;
   height: 18px;
 }
 
@@ -1186,17 +1186,20 @@ background-color:rgba(230, 179, 179, 0.84);
 
 .chosenMarkets-selections,
 .chosenMarken-selections{
+  position: relative;
   scrollbar-gutter: stable;
   width: 496px;
   height: 100%;
   min-height: var(--chosenMarkets-selections-min-resize);
-  padding: 0 37px 0 50px;
+  padding: 3px 37px 3px 50px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+
 
 .BigSlide{
   width:500px;
@@ -2218,7 +2221,7 @@ but last one shouldnt have it*/
 .chosenMarken{
   position: relative;
   width: 100%;
-  background: blue; /*#f9fafb*/
+  background: #f9fafb;
   border-top: 1px solid #e5e7eb;
   padding-top: 10px;
   padding-bottom: 34px;
