@@ -1094,7 +1094,7 @@ background-color:rgba(230, 179, 179, 0.84);
 
 .hideCM{
   max-height: 612px !important;
-  height: 612px !important; 
+  flex-basis: 100% !important; 
 }
 
 
@@ -2205,10 +2205,6 @@ but last one shouldnt have it*/
 
 
 
-
-
-
-
 .fs-13{
   font-size: 13px;
   pointer-events: none;
@@ -2228,6 +2224,8 @@ but last one shouldnt have it*/
   flex: 1;
   min-height: var(--chosenMarkets-min-resize);
 }
+
+
 
 
 

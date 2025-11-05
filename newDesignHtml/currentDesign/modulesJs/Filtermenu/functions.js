@@ -1731,15 +1731,16 @@ function handleCMOpening(menuType){
 
 }
 
-// only one transition after that transition will be removed
-function applyTransition(menu, CM, action){
 
-  // 1) determine transition value
+// calculate transition value depending on the size of the market-menu slide
+function determineTransVal(CM, action){
   let transVal = 0
+
   if (action == "open"){
     transVal = 0.4
 
   }
+
   // transition proportional to size of slide
   else if (action == "close"){
     const baseHeight = 152  // smallest height
@@ -1749,11 +1750,16 @@ function applyTransition(menu, CM, action){
     transVal = baseTrans + transAdd
   }
 
-  console.log(transVal)
-  // 2) use this transition value
+  return transVal
+}
+
+
+// only one transition after that transition will be removed
+function applyTransition(menu, CM, action){
+  let transVal = determineTransVal(CM, action)
+  
   menu.style.transition = `all ${transVal}s ease`
   menu.addEventListener("transitionend",()=>menu.style.transition = "", {once: true})
-  
 }
 
 // if 0 boxes available and first box will be added, adding smoothTrans so CM opens with transition
@@ -2040,20 +2046,32 @@ export function stopResize(menuType){
 
 
 
-function removeTrans(MENU){
-  MENU.addEventListener("transitionend",function handler(){
-    MENU.style.transition = ""
-    MENU.removeEventListener("transitionend",handler)
-  })
-}
 
 
 // Help
 function stateCM(cmd, menuType){
-  const { MENU } = V.MENUS[menuType]
+  const { MENU, PARENT, CM } = V.MENUS[menuType]
   scaleDuration(cmd, menuType)
-  cmd == "open" ? MENU.classList.remove("hideCM") : MENU.classList.add("hideCM")
-  removeTrans(MENU)
+  
+  if (cmd == "open"){
+
+  }
+
+  else{
+    /*
+    const slideHeight = PARENT.offsetHeight
+    const paddingTop = 70
+    const availableSpace = slideHeight - paddingTop
+    const chosenMarketsHeight = 50
+    const menuSectionHeight = availableSpace - chosenMarketsHeight
+    MENU.style.flexBasis = `${menuSectionHeight}px`
+    MENU.style.maxHeight = `${menuSectionHeight}px`*/
+  
+
+  }
+
+  //cmd == "open" ? MENU.classList.remove("hideCM") : MENU.classList.add("hideCM")
+  MENU.addEventListener("transitionend",() => MENU.style.transition = "", {once:true})
 }
 
 
@@ -2063,12 +2081,13 @@ function transHandler(state, menuType){
   const startOffsetTop = state == "bottom" ? 295 : 580
   const curOffsetTop = CM.offsetTop
   const distance = startOffsetTop - curOffsetTop
-  const scaleFactor = state == "bottom" ? 0.005 : 0.001
+  const scaleFactor = state == "bottom" ? 0.005 : 0.0015
   const baseTrans = 0.4
   
   const duration = baseTrans + (distance * scaleFactor)
   const trans = `all ${duration}s ease`
   MENU.style.transition = trans
+  console.log(trans)
   set_LAST_TRANSITION(trans)
   
 }
@@ -2080,6 +2099,7 @@ function scaleDuration(cmd, menuType){
   const { MENU } = V.MENUS[menuType]
 
   if (cmd == "open"){
+    console.log("open: ", V.LAST_TRANSITION)
     MENU.style.transition = menuType == "märkte" ? V.LAST_TRANSITION : V.LAST_TRANSITIONMK 
   }
   else{

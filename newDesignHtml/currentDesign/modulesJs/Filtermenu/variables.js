@@ -72,6 +72,7 @@ export const CLOSE_PREISE_MENU = document.getElementById("closePreiseMenu")
 export const CLOSE_BEWERTUNG_MENU = document.getElementById("closeBewertungMenu")
 export const CLOSE_MÄRKTE_MENU = document.getElementById("closeMärkteMenu")
 export const MÄRKTE_SLIDE = document.getElementById("MärkteSlide")
+export const MARKEN_SLIDE = document.getElementById("MarkenSlide")
 export const CLOSE_SPEICHERKAP_MENU = document.getElementById("closeSpeicherKapMenu")
 export const CLOSE_MARKEN_MENU = document.getElementById("closeMarkenMenu")
 export const passwordInput = document.getElementById("login-passw")
@@ -249,6 +250,7 @@ const keysOne = [
     "set_LAST_TRANSITION",
     "set_startY",
     "set_startHeight",
+    "PARENT"
 ]
 
 const märkteValues = [
@@ -273,6 +275,7 @@ const märkteValues = [
     set_LAST_TRANSITION,
     set_startY,
     set_startHeight,
+    MÄRKTE_SLIDE
 ]
 
 const markenValues = [
@@ -297,6 +300,7 @@ const markenValues = [
     set_LAST_TRANSITIONMK,
     set_startY_MK,
     set_startHeight_MK,
+    MARKEN_SLIDE
 ]
 
 const keysTwo = [

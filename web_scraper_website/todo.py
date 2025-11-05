@@ -1,4 +1,5 @@
 #nW -> not working
+#tW -> test if its working right
 
 #commands: 
 # celery -A web_scraper_website worker -l info -P solo   
@@ -17,7 +18,9 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-    # CM toggle-btn clicken normal und fullscreen nW
+    # CM toggle-btn normal und fullscreen machen functions.js l.2052, wenn btn clicked, soll flex-basis statt 100% 93% machen, aber dann ist fullscreen bissl verschoben das beheben
+    # wenn CM closed switch normal und fullscreen -> tW
+    # geht transition noch richtig bei normale, fullscreen märkteSLide
     # CM-selections untere box mehr platz nach unten
     # CM erst d-none, dann animation öffnen, alle auswählen btn click second-height,first-height ändert es, ist das unnötig? entfernen wenn ja
     # unten bissl freiraum bei normale window CM und fullscreen CM auch
