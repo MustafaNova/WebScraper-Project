@@ -2045,30 +2045,67 @@ export function stopResize(menuType){
 }
 
 
+// set previous size of CM
+function restorePreviousState(MENU, menuType){
+  // open
+  if (menuType == "märkte"){
+    MENU.style.flexBasis = V.previousfb
+    MENU.style.maxHeight = V.previousMh
+  }
+  else{
+    MENU.style.flexBasis = V.previousfb_MK
+    MENU.style.maxHeight = V.previousMh_MK
+  }
 
+}
+
+
+function reduceCM(menuType){
+  // reduce
+  const { MENU, PARENT, set_previousfb, set_previousMh } = V.MENUS[menuType]
+  const slideHeight = PARENT.offsetHeight
+  const paddingTop = 70
+  const availableSpace = slideHeight - paddingTop
+  const chosenMarketsHeight = 50
+  const menuSectionHeight = availableSpace - chosenMarketsHeight
+  set_previousfb(getComputedStyle(MENU).flexBasis)
+  set_previousMh(getComputedStyle(MENU).maxHeight)
+  MENU.style.flexBasis = `${menuSectionHeight}px`
+  MENU.style.maxHeight = `${menuSectionHeight}px`
+
+  // set listener
+  V.set_lastHeight(window.innerHeight)
+  if (menuType == "märkte") EvtManager.attachListener("reducedCM_resize")
+  else EvtManager.attachListener("reducedCM_resize_MK")
+
+}
+
+
+// when CM is reduced and height of slide changes,
+//  CM has to adapt to it, so it will always be at the bottom of the slide
+export function reducedCM_handler(menuType){
+  if (V.lastHeight == window.innerHeight) return
+
+  const { MENU } = V.MENUS[menuType]
+  const difference = window.innerHeight - V.lastHeight
+  const newfb = parseFloat(getComputedStyle(MENU).flexBasis) + difference
+  const newMh = parseFloat(getComputedStyle(MENU).maxHeight) + difference
+
+  MENU.style.flexBasis = `${newfb}px`
+  MENU.style.maxHeight = `${newMh}px`
+
+  V.set_lastHeight(window.innerHeight)
+
+}
 
 
 // Help
 function stateCM(cmd, menuType){
-  const { MENU, PARENT, CM } = V.MENUS[menuType]
+  const { MENU } = V.MENUS[menuType]
   scaleDuration(cmd, menuType)
   
-  if (cmd == "open"){
-
-  }
-
-  else{
-    /*
-    const slideHeight = PARENT.offsetHeight
-    const paddingTop = 70
-    const availableSpace = slideHeight - paddingTop
-    const chosenMarketsHeight = 50
-    const menuSectionHeight = availableSpace - chosenMarketsHeight
-    MENU.style.flexBasis = `${menuSectionHeight}px`
-    MENU.style.maxHeight = `${menuSectionHeight}px`*/
-  
-
-  }
+  if (cmd == "open") restorePreviousState(MENU, menuType)
+  else reduceCM(menuType)
 
   //cmd == "open" ? MENU.classList.remove("hideCM") : MENU.classList.add("hideCM")
   MENU.addEventListener("transitionend",() => MENU.style.transition = "", {once:true})
@@ -2087,7 +2124,6 @@ function transHandler(state, menuType){
   const duration = baseTrans + (distance * scaleFactor)
   const trans = `all ${duration}s ease`
   MENU.style.transition = trans
-  console.log(trans)
   set_LAST_TRANSITION(trans)
   
 }

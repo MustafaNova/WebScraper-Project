@@ -7,8 +7,8 @@
 # startordner: web_scraper_website\web_scraper
 
 
-#commit(alles in ein satz zsmfassen):
-# CM open,close,resize also working at fullscreen
+#next commit:
+# CM toggle reduced state and normal state working for all window heights, adjusting itself
 
 
 #todos:
@@ -18,6 +18,9 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
+    # wenn CM geschlossen ist und normal zwischen fullscreen wechselt, dann märkte-menu sieht man menu nach unten geht, das soll nicht gesehen werden schneller anpassen
+    # listener falls height size verändert, während CM closed ist, soll sich anpassen
+    # wie von reduceCM den listener in restorePreviousState removen(wenn listener erstell soll in listener registretation den listener reintun damit man drauf zugreifne kann zum removen)
     # CM toggle-btn normal und fullscreen machen functions.js l.2052, wenn btn clicked, soll flex-basis statt 100% 93% machen, aber dann ist fullscreen bissl verschoben das beheben
     # wenn CM closed switch normal und fullscreen -> tW
     # geht transition noch richtig bei normale, fullscreen märkteSLide

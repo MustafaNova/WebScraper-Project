@@ -63,7 +63,13 @@ EvtManager.menuListeners = {
       { element: document, type: "mouseup", handler: FM.stopResize, params: ["marken"]}
     ],
 
-    
+    reducedCM_resize: [
+      { element: window, type: "resize", handler: FM.reducedCM_handler, params: ["märkte"]}
+    ],
+
+    reducedCM_resize_MK: [
+      { element: window, type: "resize", handler: FM.reducedCM_handler, params: ["marken"]}
+    ],
 
 
     preise_menu: [

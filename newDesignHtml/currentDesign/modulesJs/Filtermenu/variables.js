@@ -141,6 +141,8 @@ export function set_lastHeight(value){
 }
 
 
+
+
 // märkte
 export let LAST_TRANSITION = ""
 export function set_LAST_TRANSITION(value){
@@ -192,6 +194,17 @@ export function set_startHeight(value){
 }
 
 
+export let previousfb
+export function set_previousfb(value){
+    previousfb = value
+}
+
+export let previousMh
+export function set_previousMh(value){
+    previousMh = value
+}
+
+
 // märkte
 
 
@@ -222,6 +235,16 @@ export function set_startHeight_MK(value){
     startHeight_MK = value
 }
 
+// before closing CM with toggle-btn, save the value
+export let previousfb_MK
+export function set_previousfb_MK(value){
+    previousfb_MK = value
+}
+export let previousMh_MK
+export function set_previousMh_MK(value){
+    previousMh_MK = value
+}
+
 
 
 // marken
@@ -250,7 +273,9 @@ const keysOne = [
     "set_LAST_TRANSITION",
     "set_startY",
     "set_startHeight",
-    "PARENT"
+    "PARENT",
+    "set_previousfb",
+    "set_previousMh"
 ]
 
 const märkteValues = [
@@ -275,7 +300,9 @@ const märkteValues = [
     set_LAST_TRANSITION,
     set_startY,
     set_startHeight,
-    MÄRKTE_SLIDE
+    MÄRKTE_SLIDE,
+    set_previousfb,
+    set_previousMh
 ]
 
 const markenValues = [
@@ -300,7 +327,9 @@ const markenValues = [
     set_LAST_TRANSITIONMK,
     set_startY_MK,
     set_startHeight_MK,
-    MARKEN_SLIDE
+    MARKEN_SLIDE,
+    set_previousfb_MK,
+    set_previousMh_MK
 ]
 
 const keysTwo = [
