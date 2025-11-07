@@ -677,9 +677,12 @@ function convertToString(CM_SELECTIONS){
 
 
 function addChosenBox(menuType){
-  const {CM_SELECTIONS, CHOSENBOX_ID} = V.MENUS[menuType]
+  const {CM_SELECTIONS, CHOSENBOX_ID, MENU, CM} = V.MENUS[menuType]
   const content = buildContent(CM_SELECTIONS)
   const childrenString = convertToString(CM_SELECTIONS)
+
+  MENU.classList.remove("normalMode")
+  CM.classList.remove("hidden")
 
   document.getElementById(CHOSENBOX_ID)?.remove() 
   V.CHOOSEN_CONTENT.innerHTML+=
@@ -713,7 +716,7 @@ function updateAllBtn(menuType){
 
 
 function resetSlide(menuType){
-  const { MENU, CM_HEADER, GRIP, TOGGLE_CM, CM, CM_SELECTIONS } = V.MENUS[menuType]
+  const { MENU, CM_HEADER, GRIP, TOGGLE_CM, CM, CM_SELECTIONS, CHOSENBOX_ID } = V.MENUS[menuType]
 
   MENU.classList.add("normalMode")
   CM_HEADER.classList.remove("opacity-0")
@@ -721,27 +724,25 @@ function resetSlide(menuType){
   TOGGLE_CM.classList.replace("fa-caret-up","fa-caret-down")
   MENU.classList.remove("hideCM")
   MENU.style.flexBasis = "" // not removeAttribute("style"), because transition also would be removed
+  MENU.style.maxHeight = ""
+  removeCM_listener(menuType) // Ensure the CM listener is removed in case it’s still active
   CM.removeAttribute("style")
   CM_SELECTIONS.removeAttribute("style")
+  MENU.addEventListener("transitionend", ()=> CM.classList.add("hidden"), {once:true})  // ensuring smooth closing of CM
+  document.getElementById(CHOSENBOX_ID).remove() // choosen market box will be removed
 
 }
 
 
 // Main
 export function onCounterChange(menuType){
-  const { COUNTER, MENU, CHOSENBOX_ID } = V.MENUS[menuType]
+  const { COUNTER } = V.MENUS[menuType]
   const cntVal = parseInt(COUNTER.textContent)
+
   updateAllBtn(menuType)
-
-  if (cntVal == 0){
-    resetSlide(menuType)
-    document.getElementById(CHOSENBOX_ID).remove() // choosen market box will be removed
-  }
-  else{
-    MENU.classList.remove("normalMode")
-    addChosenBox(menuType)    
-  }
-
+  if (cntVal == 0) resetSlide(menuType)
+  else addChosenBox(menuType)    
+  
 }
 
 
@@ -2045,17 +2046,30 @@ export function stopResize(menuType){
 }
 
 
-// set previous size of CM
+// removes the resize listener which adapts reduced CM to different window heights
+function removeCM_listener(menuType){
+  const listenerId = menuType == "märkte" ? "reducedCM_resize" : "reducedCM_resize_MK"
+  const handler = EvtManager.menuListeners[listenerId][0].wrappedhandler
+
+  if (handler){
+    window.removeEventListener("resize", handler)
+    EvtManager.menuListeners[listenerId][0].wrappedhandler = null
+  }
+}
+
+// set previous size of CM, open CM
 function restorePreviousState(MENU, menuType){
-  // open
+  
   if (menuType == "märkte"){
     MENU.style.flexBasis = V.previousfb
-    MENU.style.maxHeight = V.previousMh
+    MENU.style.maxHeight = V.previousMh  
   }
   else{
     MENU.style.flexBasis = V.previousfb_MK
     MENU.style.maxHeight = V.previousMh_MK
   }
+
+  removeCM_listener(menuType)
 
 }
 
@@ -2082,7 +2096,7 @@ function reduceCM(menuType){
 
 
 // when CM is reduced and height of slide changes,
-//  CM has to adapt to it, so it will always be at the bottom of the slide
+// CM has to adapt to it, so it will always be at the bottom of the slide
 export function reducedCM_handler(menuType){
   if (V.lastHeight == window.innerHeight) return
 
@@ -2093,7 +2107,7 @@ export function reducedCM_handler(menuType){
 
   MENU.style.flexBasis = `${newfb}px`
   MENU.style.maxHeight = `${newMh}px`
-
+  console.log("test")
   V.set_lastHeight(window.innerHeight)
 
 }

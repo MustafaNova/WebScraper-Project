@@ -1142,6 +1142,7 @@ background-color:rgba(230, 179, 179, 0.84);
   padding-left: 50px;
   min-height: var(--märkte-menu-min-resize);
   max-height: var(--second-height-one-box);
+  background-color: white; /* important so at resizing window when CM is closed, the repaint will not be seen*/
   flex: 0 0 100%;
 }
 
@@ -1479,7 +1480,7 @@ but last one shouldnt have it*/
   width: 100%;
   max-width: calc(3*227px + 2 * 20px);
   gap:10px;
-  top: 65px;
+  top: 0px;
   margin:  auto;
   justify-items: center;
 }

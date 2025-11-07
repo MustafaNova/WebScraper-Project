@@ -8,7 +8,8 @@
 
 
 #next commit:
-# CM toggle reduced state and normal state working for all window heights, adjusting itself
+# CM is closed and resizing window, normal to fullscreen there will not be seen how browser repaints the slide
+# reducedCm_listener is removing after CM is not reduced anymore
 
 
 #todos:
@@ -17,36 +18,13 @@
  # produktdetails seite designen produkt (https://www.saturn.de/de/product/_apple-ipad-air-wi-fi-2025-7-generation-tablet-128-gb-11-zoll-blau-2984224.html):
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
-    
-    # wenn CM geschlossen ist und normal zwischen fullscreen wechselt, dann märkte-menu sieht man menu nach unten geht, das soll nicht gesehen werden schneller anpassen
-    # listener falls height size verändert, während CM closed ist, soll sich anpassen
-    # wie von reduceCM den listener in restorePreviousState removen(wenn listener erstell soll in listener registretation den listener reintun damit man drauf zugreifne kann zum removen)
-    # CM toggle-btn normal und fullscreen machen functions.js l.2052, wenn btn clicked, soll flex-basis statt 100% 93% machen, aber dann ist fullscreen bissl verschoben das beheben
-    # wenn CM closed switch normal und fullscreen -> tW
-    # geht transition noch richtig bei normale, fullscreen märkteSLide
-    # CM-selections untere box mehr platz nach unten
-    # CM erst d-none, dann animation öffnen, alle auswählen btn click second-height,first-height ändert es, ist das unnötig? entfernen wenn ja
-    # unten bissl freiraum bei normale window CM und fullscreen CM auch
-    # fullscreen CM nach oben resizen, graue bereich muss gröser werden, bis nach oben das nur eine box oberhalt ist resizen können
-    # zwischen fullscreen wehcsel cm sieht man kurz animation
-    # märkte/marken Slide anpassen, CM mehr nach unten, wenn CM öffnet bei fullscreen anpassen
-    # chosenboxen die erste slide eingefügt werden, diese position anpassen
-    # vollbildschirm anpassen filter-menu an alle bildhscirme, also mit vw,vh einstellen
-    # märkte/marken bei ausgewählten märkte boxne auch bei hover soll box animation wie die selections-boxen haben
-    # functions.js von filtermenu aufteilen in mehrere kleinere dateien thematisch
-    # vollbildmodus filterMenu anpassen
-    
-    # EvtManager listenerRegistration, so anpassen das auf el, mehrere events mit deren funktionen anwenden kann, zb filter_menu alle events sind auf einem event, das kann man in eine liste packen statt 3 separate listen => mehr übersicht
-    
+
     # produktboxen canva chatgpt design soll machen für eine box und das mit grid machen(repsonsive layout) 
-    # filtermenu chatgpt canvas bessere design fragen und machen
-    # alle anderen menus chatgpt schicken und nach bessere design fragen
-    # märkte/menu fade in machen bei scroll bereich
     # wenn bottomSLide öffnet sieht man bei menubar rechts weiße streifen noch
-    # choosenbox kreuz icon font awesome ein anderes nehmen
     # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
     # accountSlide beim schliesen, schliest es nicht clean wie filtermenu
     # filterbottom bei allen slides abstand zu oben soll gleich sein
+    # functions.js von filtermenu aufteilen in mehrere kleinere dateien thematisch
     # wenn cube menubar next/last slide macht wird kleiner,gröser bissl bleibt nicht bei gleicher gröse
     # filterMenu wenn TopSeller clickt dann wird choosenbox hinzugefügt. aber es soll nicht hinzufügen
     # bottomSlide choosenfilter boxen wo einfügen bei standardSlide bereich
