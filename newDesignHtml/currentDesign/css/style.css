@@ -44,7 +44,8 @@
   --muted: #6b7280;
   --bottom-box-height: 60px;
   --bottom-box-width: 93%;
-  --top-space: 25px
+  --top-space: 25px;
+  --blue-accent: #2563eb;
   
 }
 
@@ -1919,15 +1920,75 @@ but last one shouldnt have it*/
 }
 
 
-.produktBox{
-  flex-shrink: 10;
-  min-width: 0px;
-  width:23%;
-  height:470px;
-  margin-top:13px;
-  margin-right: 10px;
-  transition: margin-right 0.4s ease
+.product-box{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 400px;
+  box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
+  border-radius: 18px;
+  transition: all 0.2s ease;
 }
+
+
+.favorite-icon{
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favorite-icon:hover{
+  transform: scale(1.1);
+  background-color: var(--blue-accent);
+}
+.favorite-icon:hover i{
+  color: white;
+}
+
+.product-stars{
+  font-size: 10px;
+  height: 12px;
+}
+
+.product-rating{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #FFD43B;
+}
+
+.favorite-icon i{
+  font-size: 20px;
+}
+
+.product-box:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgb(0, 0, 0, 0.12);
+}
+
+.product-content{
+  background-color: white;
+  height: 65%;
+  border-radius: 0 0 18px 18px;
+  padding: 20px;
+}
+
+.product-image{
+  height: 47%;
+  background-color: #d4d6d7;
+  border-radius: 18px 18px 0 0;
+}
+
 
 .main{
   margin-top: 10px;
@@ -1946,9 +2007,7 @@ but last one shouldnt have it*/
 
 
 @media(max-width: 1300px){
-  .produktBox{
-    margin-right: 0px;
-  }
+ 
   
  .main{
   padding-left: 0px;
@@ -1960,33 +2019,7 @@ but last one shouldnt have it*/
  }
 }
 
-@media(max-width:1060px){
-  .produktBox{
-    width: 27%;
-    margin-right: 15px;
-  }
-}
 
-@media(max-width:880px){
-  .produktBox{
-    margin-right: 0px;
-  }
-}
-
-@media(max-width:830px){
-
-  .produktBox{
-    width: 280px;
-    margin-right: 25px;
-  }
-
-}
-
-@media(max-width:648px){
-  .produktBox{
-    width: 42.7%;
-  }
-}
 
 
 .warenkorbBtn{

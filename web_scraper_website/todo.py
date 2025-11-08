@@ -8,8 +8,7 @@
 
 
 #next commit:
-# CM is closed and resizing window, normal to fullscreen there will not be seen how browser repaints the slide
-# reducedCm_listener is removing after CM is not reduced anymore
+
 
 
 #todos:
@@ -19,14 +18,21 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
 
-    # produktboxen canva chatgpt design soll machen für eine box und das mit grid machen(repsonsive layout) 
+    # content: sterne titel, rezension, weiteres
+    # produktboxen canva chatgpt design soll machen für eine box und das mit grid machen(repsonsive layout), anpassen für kleinere windows width und auch fullscreen
+    # hover effekte produktbox auch einbauen, click auf warenkorb wie bei filtermenu kurz runter gehen
     # wenn bottomSLide öffnet sieht man bei menubar rechts weiße streifen noch
     # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
     # accountSlide beim schliesen, schliest es nicht clean wie filtermenu
     # filterbottom bei allen slides abstand zu oben soll gleich sein
+    # wenn searchbar eingibt produkt, soll ganz normal ohne filter danach suchen und die informationen in die produktboxen einfügen
+    # erst nachdem produkt in searchbar eingegeben hat, soll filtermenu anzeigen, wenn dann filter auswählt und submit clicked, soll produkte mit diese filter scrapen
+    # wenn produkt searchbar eingegeben, soll website offen lassen bis neue produkt sucht, weil wenn dann filter auswählt, dann kan auf der website filter auswählen und schneller scrapen
+    # produktdetails seite chatgpt galerie schauen und machen
     # functions.js von filtermenu aufteilen in mehrere kleinere dateien thematisch
     # wenn cube menubar next/last slide macht wird kleiner,gröser bissl bleibt nicht bei gleicher gröse
     # filterMenu wenn TopSeller clickt dann wird choosenbox hinzugefügt. aber es soll nicht hinzufügen
+    # wenn kein bild geladen wird produkt-box, dann fehler message anzeigen,chatgpt canva fragen wie bei produktbox anzeigen
     # bottomSlide choosenfilter boxen wo einfügen bei standardSlide bereich
     # choosen boxen und alle löschen submit btn rechts richtig zentrieren
     # wenn preisslide preisinput rechte anclicke dann wird choosen box hinzugefügt, aber bei default soll nicht hinzufügen
