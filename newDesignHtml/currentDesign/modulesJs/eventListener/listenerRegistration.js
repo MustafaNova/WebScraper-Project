@@ -144,6 +144,11 @@ EvtManager.menuListeners = {
       {element: NB.MQ_MAX830, type: "change", handler: NB.updateNavbarLayout, flag: "includeEvent"} // updates navbar Layout at window-width: 830px
     ],
 
+    addToCart: [
+      {element: FM.PRODUCTS_CONTAINER, type: "click", handler: FM.addToCartHandler, flag: "includeEvent"}
+
+    ],
+
 }
 
 

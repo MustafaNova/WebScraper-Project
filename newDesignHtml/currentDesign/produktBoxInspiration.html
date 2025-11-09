@@ -3,19 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Produktbox mit Rezension — Clean Design</title>
+  <title>Produktbox mit Fallback-Bild</title>
   <style>
-    :root{
+    :root {
       --bg:#eef2f7;
       --card:#fff;
       --accent:#2563eb;
       --accent-dark:#1e40af;
+      --accent-light:#3b82f6;
       --muted:#6b7280;
       --radius:18px;
+      --red:#ef4444;
+      --red-dark:#b91c1c;
+      --red-light:#f87171;
       font-family: Inter, system-ui, sans-serif;
     }
 
-    body{
+    body {
       margin:0;
       background:var(--bg);
       display:flex;
@@ -24,7 +28,7 @@
       height:100vh;
     }
 
-    .product-box{
+    .product-box {
       width:350px;
       height:500px;
       background:var(--card);
@@ -37,62 +41,78 @@
       transition:transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .product-box:hover{
+    .product-box:hover {
       transform:translateY(-8px);
       box-shadow:0 25px 50px rgba(0,0,0,0.12);
     }
 
-    .product-image{
+    .product-image {
       width:100%;
       height:260px;
       background:#e5e7eb center/cover no-repeat;
-      border-radius: 18px 18px 0 0;
+      border-radius:18px 18px 0 0;
       overflow:hidden;
       position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b7280;
+      font-weight:600;
     }
 
-    .favorite{
+    .product-image::before {
+      content:"Kein Bild verfügbar";
+      position:absolute;
+      font-size:16px;
+      text-align:center;
+    }
+
+    .product-image.has-image::before {
+      content:none;
+    }
+
+    .favorite {
       position:absolute;
       top:14px;
       right:14px;
       background:rgba(255,255,255,0.95);
       border-radius:50%;
-      width:40px;height:40px;
-      display:flex;align-items:center;justify-content:center;
+      width:40px; height:40px;
+      display:flex; align-items:center; justify-content:center;
       cursor:pointer;
       color:#555;
       transition:all 0.25s ease;
     }
 
-    .favorite:hover{
+    .favorite:hover {
       background:var(--accent);
       color:white;
       transform:scale(1.1);
     }
 
-    .favorite svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2}
+    .favorite svg {width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2}
 
-    .content{
+    .content {
       padding:18px;
       display:flex;
       flex-direction:column;
       flex:1;
     }
 
-    .rating{
+    .rating {
       color:#fbbf24;
       font-size:15px;
       margin-bottom:6px;
     }
 
-    .product-name{
+    .product-name {
       font-weight:700;
       font-size:20px;
       margin-bottom:6px;
       color:#111827;
     }
 
-    .review{
+    .review {
       font-size:14px;
       color:var(--muted);
       font-style:italic;
@@ -102,7 +122,7 @@
       padding-left:10px;
     }
 
-    .price-row{
+    .price-row {
       display:flex;
       align-items:center;
       gap:8px;
@@ -110,20 +130,20 @@
       margin-bottom:14px;
     }
 
-    .new-price{
+    .new-price {
       font-size:22px;
       font-weight:700;
       color:var(--accent);
     }
 
-    .old-price{
+    .old-price {
       text-decoration:line-through;
       color:var(--muted);
       font-size:15px;
     }
 
-    .discount{
-      background:#dc2626;
+    .discount {
+      background:var(--red);
       color:#fff;
       font-size:13px;
       font-weight:600;
@@ -132,8 +152,8 @@
       margin-left:auto;
     }
 
-    .add-to-cart{
-      background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+    .add-to-cart {
+      background:linear-gradient(90deg,var(--accent-light),var(--accent-dark));
       color:#fff;
       border:none;
       border-radius:12px;
@@ -145,26 +165,52 @@
       align-items:center;
       justify-content:center;
       gap:8px;
-      transition:background 0.3s ease, transform 0.2s ease;
+      transition:background 0.4s ease, transform 0.2s ease;
     }
 
-    .add-to-cart:hover{
-      background:linear-gradient(90deg,var(--accent-dark),#1e3a8a);
+    .add-to-cart.active {
+      background:linear-gradient(90deg,var(--red-light),var(--red-dark));
+    }
+
+    .add-to-cart:hover {
       transform:translateY(-2px);
+      filter:brightness(1.05);
     }
 
-    .add-to-cart svg{
+    .add-to-cart svg {
       width:18px;
       height:18px;
       stroke:currentColor;
       fill:none;
       stroke-width:2;
     }
+
+    .toast {
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      background:var(--card);
+      color:#111827;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      border-left:5px solid var(--accent);
+      padding:14px 18px;
+      border-radius:var(--radius);
+      font-weight:500;
+      opacity:0;
+      transform:translateY(20px);
+      transition:all 0.4s ease;
+      z-index:1000;
+    }
+
+    .toast.show {
+      opacity:1;
+      transform:translateY(0);
+    }
   </style>
 </head>
 <body>
   <div class="product-box">
-    <div class="product-image" style="background-image:url('produktbild.jpg')">
+    <div class="product-image" style="background-image:url('');">
       <div class="favorite" title="Als Favorit markieren">
         <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
       </div>
@@ -184,5 +230,32 @@
       </button>
     </div>
   </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    const toast = document.getElementById('toast');
+    let inCart = false;
+
+    addToCartBtn.addEventListener('click', () => {
+      inCart = !inCart;
+
+      if (inCart) {
+        addToCartBtn.classList.add('active');
+        addToCartBtn.innerHTML = `<svg viewBox='0 0 24 24'><circle cx='9' cy='21' r='1'/><circle cx='20' cy='21' r='1'/><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/></svg> Entfernen`;
+        toast.textContent = 'Artikel wurde in den Warenkorb gelegt';
+        toast.style.borderLeftColor = 'var(--accent)';
+      } else {
+        addToCartBtn.classList.remove('active');
+        addToCartBtn.innerHTML = `<svg viewBox='0 0 24 24'><circle cx='9' cy='21' r='1'/><circle cx='20' cy='21' r='1'/><path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'/></svg> In den Warenkorb`;
+        toast.textContent = 'Artikel wurde aus dem Warenkorb entfernt';
+        toast.style.borderLeftColor = 'var(--red)';
+      }
+
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    });
+  </script>
 </body>
 </html>

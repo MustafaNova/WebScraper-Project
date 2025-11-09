@@ -116,6 +116,7 @@ export const MARKET_GRIP = document.querySelector(".marketGrip")
 export const MARKEN_GRIP = document.querySelector(".markenGrip")
 export const MARKET_BTNS = Array.from(document.querySelectorAll("[class='btnMärkte'] span"))
 export const MARKEN_BTNS = Array.from(document.querySelectorAll("[class='btnMarken'] span"))
+export const PRODUCTS_CONTAINER = document.getElementById("productsContainer")
 export const defaultWindow_height = 729.6 
 export const defaultCM_max_resize = 424
 

@@ -11,6 +11,7 @@ FM.setInitialMenuPosition()         //  Once at start execution to position the 
 
 
 EvtManager.attachListener("toggleMenu")
+EvtManager.attachListener("addToCart")
 EvtManager.attachListener("windowHandling")
 EvtManager.attachListener("toggleAcc")
 EvtManager.attachListener("cube")

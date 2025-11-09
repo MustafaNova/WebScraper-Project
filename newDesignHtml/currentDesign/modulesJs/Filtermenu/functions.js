@@ -2199,3 +2199,16 @@ export function toggleCM(menuType){
 }
 
 
+
+// only executes for the cart-btns
+export function addToCartHandler(e){
+  if (e.target.dataset.btn != "addToCart" ) return
+
+  // add product to cart (not implemented yet)
+
+  // show 'added to cart' message
+  
+
+
+}
+

@@ -8,7 +8,7 @@
 
 
 #next commit:
-
+# productbox design finished, startet cart-notification when clicking on cart it adds or removes from cart
 
 
 #todos:
@@ -18,9 +18,8 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
 
-    # content: sterne titel, rezension, weiteres
-    # produktboxen canva chatgpt design soll machen für eine box und das mit grid machen(repsonsive layout), anpassen für kleinere windows width und auch fullscreen
-    # hover effekte produktbox auch einbauen, click auf warenkorb wie bei filtermenu kurz runter gehen
+    # click auf warenkorb adden und entfernen popup, wie bei produktBoxInspiraton.html machen, animation popup nach gewisser ezit selber weggeht auch machen, shadow, von unten nach oben kommen, nach bestimmte zeit von oben nach unten wieder verschwinden
+    # grid machen mit mehreren produktboxen, diese sollen anpassen wenn window kleiner wird
     # wenn bottomSLide öffnet sieht man bei menubar rechts weiße streifen noch
     # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
     # accountSlide beim schliesen, schliest es nicht clean wie filtermenu
@@ -29,11 +28,13 @@
     # erst nachdem produkt in searchbar eingegeben hat, soll filtermenu anzeigen, wenn dann filter auswählt und submit clicked, soll produkte mit diese filter scrapen
     # wenn produkt searchbar eingegeben, soll website offen lassen bis neue produkt sucht, weil wenn dann filter auswählt, dann kan auf der website filter auswählen und schneller scrapen
     # produktdetails seite chatgpt galerie schauen und machen
+    # alle cartBtn müssen data-btn="addToCart" haben, damit listener sie erkennt
     # functions.js von filtermenu aufteilen in mehrere kleinere dateien thematisch
     # wenn cube menubar next/last slide macht wird kleiner,gröser bissl bleibt nicht bei gleicher gröse
     # filterMenu wenn TopSeller clickt dann wird choosenbox hinzugefügt. aber es soll nicht hinzufügen
     # wenn kein bild geladen wird produkt-box, dann fehler message anzeigen,chatgpt canva fragen wie bei produktbox anzeigen
     # bottomSlide choosenfilter boxen wo einfügen bei standardSlide bereich
+    # wenn kein bild vorhanden bei scraping durch fehler, nur dann soll "Kein Text verfügbar product-image::before element anzeigen"(wenn image added soll has-iamge classe einfügen und nur dann soll ::before content haben, ansosnten soll kein content haben)
     # choosen boxen und alle löschen submit btn rechts richtig zentrieren
     # wenn preisslide preisinput rechte anclicke dann wird choosen box hinzugefügt, aber bei default soll nicht hinzufügen
     # filter rightSlide auch layout nochmal anpassen
