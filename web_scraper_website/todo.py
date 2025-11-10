@@ -8,8 +8,7 @@
 
 
 #next commit:
-# productbox design finished, startet cart-notification when clicking on cart it adds or removes from cart
-
+# adding,removing from cart, button and cart-notif 2 designs
 
 #todos:
 
@@ -17,9 +16,9 @@
  # produktdetails seite designen produkt (https://www.saturn.de/de/product/_apple-ipad-air-wi-fi-2025-7-generation-tablet-128-gb-11-zoll-blau-2984224.html):
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
+    
 
-    # click auf warenkorb adden und entfernen popup, wie bei produktBoxInspiraton.html machen, animation popup nach gewisser ezit selber weggeht auch machen, shadow, von unten nach oben kommen, nach bestimmte zeit von oben nach unten wieder verschwinden
-    # grid machen mit mehreren produktboxen, diese sollen anpassen wenn window kleiner wird
+    # produkteDiv classe dynamisch columns anpassen. 4 pro reihe,grid machen mit mehreren produktboxen, diese sollen anpassen wenn window kleiner wird
     # wenn bottomSLide öffnet sieht man bei menubar rechts weiße streifen noch
     # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
     # accountSlide beim schliesen, schliest es nicht clean wie filtermenu

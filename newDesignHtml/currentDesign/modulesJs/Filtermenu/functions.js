@@ -2198,6 +2198,55 @@ export function toggleCM(menuType){
   }
 }
 
+function showCartNotif(){
+  if (V.CART_NOTIF.classList.contains("show-notif")) V.clear_cartNotif_timeout()  // notif already visible, only change text
+  else V.CART_NOTIF.classList.add("show-notif")
+  V.set_cartNotif_timeout(setTimeout(V.hideCartNotif,1000))
+}
+
+
+// cart-btn and notification for that have 2 designs
+// here you can choose one of that
+// 1) adding to cart => blue
+// 2) remove from cart => red
+function switchCartSytle(design, target, cartTxt){
+  if (design == "red"){
+    // change btn-design
+    target.classList.replace("product-add-to-cart","product-delete-from-cart")
+    target.classList.add("red-gradient")
+    cartTxt.innerText = "Entfernen"
+
+    // change notif-design
+    V.CART_NOTIF.innerText = "Artikel wurde in den Warenkorb gelegt"
+    V.CART_NOTIF.classList.remove("redBorderLeft")
+  }
+  else if (design == "blue"){
+    // change btn-design
+    target.classList.replace("product-delete-from-cart","product-add-to-cart")
+    target.classList.remove("red-gradient")
+    cartTxt.innerText = "In den Warenkorb"
+
+    // change notif-design
+    V.CART_NOTIF.innerText = "Artikel wurde aus dem Warenkorb entfernt"
+    V.CART_NOTIF.classList.add("redBorderLeft")
+  }
+
+  
+}
+
+
+function addToCart(target, cartTxt){
+  switchCartSytle("red", target, cartTxt)
+  showCartNotif()
+}
+
+
+
+
+function removeFromCart(target, cartTxt){
+  switchCartSytle("blue", target, cartTxt)
+  showCartNotif()  
+}
 
 
 // only executes for the cart-btns
@@ -2206,9 +2255,11 @@ export function addToCartHandler(e){
 
   // add product to cart (not implemented yet)
 
-  // show 'added to cart' message
-  
 
+  const cartTxt = e.target.querySelector("span")
+  if (cartTxt.innerText == "In den Warenkorb") addToCart(e.target, cartTxt)
+  else removeFromCart(e.target, cartTxt)
+  
 
 }
 

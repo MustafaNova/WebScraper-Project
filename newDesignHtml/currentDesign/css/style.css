@@ -47,6 +47,8 @@
   --top-space: 25px;
   --blue-accent: #2563eb;
   --blue-accent-dark: #1e40af;
+  --red-accent: #e93b3b;
+  --red-accent-dark: #940e0e;
   --muted: #6b7280;
   
 }
@@ -1914,10 +1916,11 @@ but last one shouldnt have it*/
 
 
 .produkteDiv{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   justify-content: center;
-  width:1200px;
+  width: 1320px;
   position: relative;
 }
 
@@ -1933,20 +1936,37 @@ but last one shouldnt have it*/
   transition: all 0.2s ease;
 }
 
+
 .cart-notif{
   position: fixed;
   bottom: 25px;
   right: 25px;
   background-color: white;
   height: 49px;
-  width: 320px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   border-left: 6px solid var(--blue-accent);
+  box-shadow: 0 10px 20px 1px rgb(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+}
 
+
+.redBorderLeft{
+  border-left: 6px solid var(--red-accent)
+}
+
+.show-notif{
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 
@@ -2037,7 +2057,7 @@ but last one shouldnt have it*/
 }
 
 
-.product-add-to-cart{
+.product-add-to-cart, .product-delete-from-cart{
   background-color: var(--blue-accent);
   width: 100%;
   height: 42px;
@@ -2056,6 +2076,23 @@ but last one shouldnt have it*/
   transform: translateY(0px);
   background: linear-gradient(270deg,var(--blue-accent),var(--blue-accent-dark));
 }
+
+
+.product-delete-from-cart:hover{
+  transform: translateY(-2px);
+  background: linear-gradient(270deg, var(--red-accent-dark), rgb(72, 2, 2));
+}
+
+.product-delete-from-cart:active{
+  transform: translateY(0px);
+  background: linear-gradient(270deg,var(--red-accent),var(--red-accent-dark));
+}
+
+
+.red-gradient{
+  background: linear-gradient(270deg, var(--red-accent), var(--red-accent-dark));
+}
+
 
 
 .favorite-icon i{

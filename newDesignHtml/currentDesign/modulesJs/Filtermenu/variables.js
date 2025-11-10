@@ -117,6 +117,8 @@ export const MARKEN_GRIP = document.querySelector(".markenGrip")
 export const MARKET_BTNS = Array.from(document.querySelectorAll("[class='btnMärkte'] span"))
 export const MARKEN_BTNS = Array.from(document.querySelectorAll("[class='btnMarken'] span"))
 export const PRODUCTS_CONTAINER = document.getElementById("productsContainer")
+export const CART_NOTIF = document.querySelector(".cart-notif")
+export const hideCartNotif = () => CART_NOTIF.classList.remove("show-notif")
 export const defaultWindow_height = 729.6 
 export const defaultCM_max_resize = 424
 
@@ -246,10 +248,16 @@ export function set_previousMh_MK(value){
     previousMh_MK = value
 }
 
-
-
 // marken
 
+
+export let cartNotif_timeout
+export function set_cartNotif_timeout(value){
+    cartNotif_timeout = value
+}
+export function clear_cartNotif_timeout(){
+    clearTimeout(cartNotif_timeout)
+}
 
 
 const keysOne = [
