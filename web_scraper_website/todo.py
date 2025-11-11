@@ -8,7 +8,6 @@
 
 
 #next commit:
-# adding,removing from cart, button and cart-notif 2 designs
 
 #todos:
 
@@ -17,13 +16,10 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-
-    # produkteDiv classe dynamisch columns anpassen. 4 pro reihe,grid machen mit mehreren produktboxen, diese sollen anpassen wenn window kleiner wird
-    # wenn bottomSLide öffnet sieht man bei menubar rechts weiße streifen noch
-    # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
-    # accountSlide beim schliesen, schliest es nicht clean wie filtermenu
-    # filterbottom bei allen slides abstand zu oben soll gleich sein
-    # wenn searchbar eingibt produkt, soll ganz normal ohne filter danach suchen und die informationen in die produktboxen einfügen
+    # click auf alle löschen django website geht net, testen ob alles klappt
+    # wenn searchbar eingibt produkt, soll ganz normal ohne filter danach suchen und die informationen in die produktboxen einfügen, und filter-btn wie saturn über produkten anzeigen
+    # wenn kein bild gescrapt, dann erst 'kein Bild verfügbar' anzeigen
+    # website.js in js ordner was das, bessere name, das in modules reintun wenn klappt, und in variables und functions unterteilen
     # erst nachdem produkt in searchbar eingegeben hat, soll filtermenu anzeigen, wenn dann filter auswählt und submit clicked, soll produkte mit diese filter scrapen
     # wenn produkt searchbar eingegeben, soll website offen lassen bis neue produkt sucht, weil wenn dann filter auswählt, dann kan auf der website filter auswählen und schneller scrapen
     # produktdetails seite chatgpt galerie schauen und machen
@@ -40,6 +36,9 @@
     # wenn vollbildschirm mache, dann right slide geht nicht bis nach unten
     # arrowUp bei bottomSlide ist nicht auf der gleichen höhe wie die überschrift, arrowUp bissl hoch verschieben
     # überscrhfit mit icon bei show bei manchen nicht gleiche höhe
+    # accountslide registrieren und einloggen einbauen
+    # accountSlide auge clicken verschiebt sich offene auge bissl nach rechts
+    # accountSlide beim schliesen, schliest es nicht clean wie filtermenu
     # accountslide soll auch wie filtermenu ab gleiche px width von unten kommen
     # produktboxen design chatpgt fragen, mit runde border futuristisch modern
     # navBar.js window eventlistener löschen

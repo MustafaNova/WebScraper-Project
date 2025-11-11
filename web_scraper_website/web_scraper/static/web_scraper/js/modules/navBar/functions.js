@@ -1,137 +1,22 @@
-// defines
-const LEFTMOVE_DEFAULT = 160;
-const MENUBARWIDTH = 1292;
-const MENUBAR = document.querySelector(".menubar");
-const ACC_SLIDE= document.getElementById("accountSlide");
-const OVERLAY= document.querySelector(".overlay");
-const OUTERMENUBAR = document.querySelector(".Outermenubar");
-let OVERFLOWLEFT = 0;
-let ANGLE=0;
-
-
-export const FILTERMENU_SLIDE = document.getElementById("slideInStandard")
-export const FM_SLIDES = document.getElementsByClassName("standardSlide") // elements
-export const PWD_EYE = document.getElementById("passwEye")
-export const SEARCHBAR = document.getElementById("searchbar")
-export const CUBE = document.querySelector(".cube");
-export const MENU_BTN = document.getElementById("openCloseFilterBtn")
-export const MENUBAR_RIGHT_ARR = document.getElementById("rightArr")
-export const MENUBAR_LEFT_ARR = document.getElementById("leftArr")
-export const ACC_OPEN_BTN = document.getElementById("accOpenBtn")
-export const ACC_CLOSE_BTN = document.getElementById("accCloseBtn")
-
-export const CUBE_ARR_UP1 = document.getElementById("cubeArrUp1")
-export const CUBE_ARR_DOWN1 = document.getElementById("cubeArrDown1")
-export const CUBE_ARR_UP2 = document.getElementById("cubeArrUp2")
-export const CUBE_ARR_DOWN2 = document.getElementById("cubeArrDown2")
-export const CUBE_ARR_UP3 = document.getElementById("cubeArrUp3")
-export const CUBE_ARR_DOWN3 = document.getElementById("cubeArrDown3")
-export const CUBE_ARR_UP4 = document.getElementById("cubeArrUp4")
-export const CUBE_ARR_DOWN4 = document.getElementById("cubeArrDown4")
-
-
-class EventListenerManager {
-
-  constructor(){
-
-    // All needed elements for eventlisteners
-    this.passwordInput= document.getElementById("login-passw");
-    this.pwLabel= document.getElementById("aSl-pw-placeholder");
-    this.emailInput= document.getElementById("login-email");
-    this.emailLabel= document.getElementById("aSl-email-placeholder");
-    
-
-
-    
-    this.eventListeners= {
-    "accountSlide" : {
-      "movePwUpOnClick": {"element": this.passwordInput, "type": "mousedown", "handler": this.movePwUp.bind(this)},
-      "movePwDownOnBlur": {"element": this.passwordInput, "type": "blur", "handler": this.movePwDown.bind(this) },
-      "moveEmailUpOnClick": {"element": this.emailInput, "type": "mousedown", "handler": this.moveEmailUp.bind(this)},
-      "moveEmailDownOnBlur": {"element": this.emailInput, "type": "blur", "handler": this.moveEmailDown.bind(this) },
-
-    }
-    };
-
-
-
-  }
-
-
-
-
-  // activate all Listeners from one category
-  activateCategoryListeners(category){
-
-    for (let key in this.eventListeners[category]){
-      
-      const eventListener= this.eventListeners[category][key];
-      const element= eventListener["element"];
-      const type= eventListener["type"];
-      const handler= eventListener["handler"]; 
-      element.addEventListener(type,handler);
-  
-    }
- 
-  }
-  
-  // deactivate all Listeners from one category
-  deactivateCategoryListeners(category){
-
-    for (let key in this.eventListeners[category]){
-
-      const eventListener= this.eventListeners[category][key];
-      const element= eventListener["element"];
-      const type= eventListener["type"];
-      const handler= eventListener["handler"]; 
-      element.removeEventListener(type,handler);
-  
-    }
-
-  }
-
-
-  // handler
-
-  movePwUp(){
-    this.pwLabel.classList.add("moveLabelUp");
-  }
-
-  movePwDown(){
-    if (this.passwordInput.value === ""){
-      this.pwLabel.classList.remove("moveLabelUp");
-    }
-
-  }
-
-  moveEmailUp(){
-    this.emailLabel.classList.add("moveLabelUp");
-  }
-
-  moveEmailDown(){
-     if (this.emailInput.value === ""){
-      this.emailLabel.classList.remove("moveLabelUp");
-    }
-
-  }
-  
-
-}
-
-const eventListenerManager= new EventListenerManager();
+import { EvtManager } from "../eventListener/class.js"
+import { 
+   passwordInput, pwLabel, emailInput, emailLabel, add_OVERFLOWLEFT, reset_OVERFLOWLEFT, LEFTMOVE_DEFAULT, MENUBARWIDTH, DEFAULT_PR, MENUBAR, ACC_SLIDE, OVERLAY, OUTERMENUBAR, MAIN_DIV, NB, NB_SEARCHBAR, SCROLLBAR_WIDTH, SECONDLAYER, NAVBAR_SEARCHBAR, FIRSTLAYER, CUBE_CONTAINER, NB_MENUBTN, NB_MENUBAR, OVERFLOWLEFT, ANGLE, FM_SLIDES, PWD_EYE, SEARCHBAR, CUBE, MENUBAR_RIGHT_ARR, MENUBAR_LEFT_ARR, ACC_OPEN_BTN, ACC_CLOSE_BTN, CUBE_ARR_UP1, CUBE_ARR_DOWN1, CUBE_ARR_UP2, CUBE_ARR_DOWN2, CUBE_ARR_UP3, CUBE_ARR_DOWN3, CUBE_ARR_UP4, CUBE_ARR_DOWN4 
+   ,add_ANGLE, set_ANGLE
+} from "./variables.js"
+export * from "./variables.js" 
 
 
 
 //clicking on arrows on the updating button in navbar
 
 export function lastSide(){
-  ANGLE+= 90;
+  add_ANGLE(90)
   CUBE.style.transform= `rotateX(${ANGLE}deg)`;
 
 }
 
 export function nextSide(){
-  ANGLE-= 90;
+  add_ANGLE(-90)
   CUBE.style.transform = `rotateX(${ANGLE}deg)`; 
   
 }
@@ -191,8 +76,8 @@ export function stopCubeAnimation(){
 
   
   // save current degree
-  ANGLE = getCurrentRotateX(computed);
-
+  //ANGLE = getCurrentRotateX(computed);
+  set_ANGLE(getCurrentRotateX(computed))
 
   // save last animation state
   CUBE.style.transform = computed;
@@ -243,7 +128,7 @@ function showMenuBarArr(arrow){
   
   if (arr.classList.contains("visible")) return;
 
-  arr.classList.remove("unvisible");
+  arr.classList.remove("unvisible", "noPointer");
   arr.classList.add("visible");
 }
 
@@ -255,7 +140,8 @@ function hideMenuBarArr(arrow){
   if (arr.classList.contains("unvisible")) return;
 
   arr.classList.remove("visible");
-  arr.classList.add("unvisible");
+  arr.classList.add("unvisible", "noPointer");
+
 }
 
 
@@ -264,6 +150,7 @@ function hideMenuBarArr(arrow){
 //menubar controll for full screen
 
 export function moveMenubarLeft(){
+
 
   // calculate overflow on right side
   const OutermenubarWidth = OUTERMENUBAR.clientWidth;
@@ -277,7 +164,8 @@ export function moveMenubarLeft(){
   if (overflow <= LEFTMOVE_DEFAULT){
 
     MENUBAR.style.transform = `translateX(-${OVERFLOWLEFT + overflow}px)`;
-    OVERFLOWLEFT+= overflow;
+    //OVERFLOWLEFT+= overflow;
+    add_OVERFLOWLEFT(overflow)
 
     showMenuBarArr("left");
     hideMenuBarArr("right");
@@ -287,17 +175,13 @@ export function moveMenubarLeft(){
   else{
   
     MENUBAR.style.transform = `translateX(-${OVERFLOWLEFT + LEFTMOVE_DEFAULT}px)`;
-    OVERFLOWLEFT+= LEFTMOVE_DEFAULT;
+    //OVERFLOWLEFT+= LEFTMOVE_DEFAULT;
+    add_OVERFLOWLEFT(LEFTMOVE_DEFAULT)
 
     showMenuBarArr("left");
 
   }
     
-  
-  
-  
-
-
 
 }
 
@@ -308,7 +192,8 @@ export function moveMenubarRight(){
   
   if (OVERFLOWLEFT <= LEFTMOVE_DEFAULT){
     MENUBAR.style.transform = "translateX(0px)";
-    OVERFLOWLEFT = 0;
+    //OVERFLOWLEFT = 0;
+    reset_OVERFLOWLEFT()
 
     showMenuBarArr("right");
     hideMenuBarArr("left");
@@ -318,7 +203,8 @@ export function moveMenubarRight(){
 
     const nextTf = OVERFLOWLEFT - LEFTMOVE_DEFAULT; //decreasing the negative translateX
     MENUBAR.style.transform = `translateX(-${nextTf}px)`;
-    OVERFLOWLEFT -= LEFTMOVE_DEFAULT;
+    //OVERFLOWLEFT -= LEFTMOVE_DEFAULT;
+    add_OVERFLOWLEFT(-LEFTMOVE_DEFAULT)
 
     showMenuBarArr("right");
 
@@ -345,19 +231,57 @@ export function expandMenubarToRight(){
   const freeSpaceRight = OutermenubarWidth - menubarNewWidth;
   if (freeSpaceRight>=1){
     MENUBAR.style.transform = `translateX(${transxValue + freeSpaceRight}px)`;
-    OVERFLOWLEFT-= freeSpaceRight;
+    //OVERFLOWLEFT-= freeSpaceRight;
+    add_OVERFLOWLEFT(-freeSpaceRight)
   }
 }
 
 
 
 
+// Help
 
-// open/close FilterSlide
-export function openCloseFilter(){
-  if (MENU_BTN.dataset.canclick == "false") return; // only clos/open if other Slides are not open
-  FILTERMENU_SLIDE.classList.toggle("openSlide");
+
+
+function disableVerticalScroll(){
+
+  // get current paddingRight value
+  const prNB = parseFloat(window.getComputedStyle(NB).paddingRight)
+  const prMain = parseFloat(window.getComputedStyle(MAIN_DIV).paddingRight)
+  const pixelAdjustment = 0.5
+  const minorAdjustment = 0.2
+  
+  // add scrollbarWidth to current paddingRight
+  NB.style.paddingRight = `${SCROLLBAR_WIDTH + prNB +  minorAdjustment}px`
+  MAIN_DIV.style.paddingRight = `${SCROLLBAR_WIDTH + prMain + pixelAdjustment}px`
+
+  // searchbar at <=830 moves, so has to be corrected
+  if (window.innerWidth <= 830){
+    const newPR = parseFloat(window.getComputedStyle(NB_SEARCHBAR).paddingRight) + SCROLLBAR_WIDTH
+    NB_SEARCHBAR.style.paddingRight = `${newPR}px`
+  }
+
+  // disable scrollbar
+  const html = document.documentElement
+  html.style.height = "100%"
+  html.style.overflowY = "hidden"
+
 }
+
+function enableVerticalScroll(){
+
+  // set paddingRight to default
+  NB.style.paddingRight = ""
+  MAIN_DIV.style.paddingRight = ""
+  window.innerWidth <= 830 ? NB_SEARCHBAR.style.right = "" : null
+
+  // enable scrollbar
+  const html = document.documentElement
+  html.style.height = ""
+  html.style.overflowY = ""
+
+}
+
 
 
 
@@ -365,34 +289,80 @@ export function openCloseFilter(){
 
 export function openAccSlide(){
 
-  // open Slide, activate black background
-  ACC_SLIDE.classList.add("openAccSlide");
-  OVERLAY.classList.add("activated");
-
-  eventListenerManager.activateCategoryListeners("accountSlide");
-
-
+  disableVerticalScroll()
+  ACC_SLIDE.classList.add("openAccSlide")
+  OVERLAY.classList.add("activated")     // activate black background
+  EvtManager.attachListener("accountSlide")
 
 
 }
 
 export function closeAccSlide(){
 
-  // close Slide, deactivate black background
-  ACC_SLIDE.classList.remove("openAccSlide");
-  OVERLAY.classList.remove("activated");
+  enableVerticalScroll()
+  ACC_SLIDE.classList.remove("openAccSlide")
+  OVERLAY.classList.remove("activated")     // deactivate black background
+  EvtManager.detachListener("accountSlide")
+}
 
-  eventListenerManager.deactivateCategoryListeners("accountSlide")
+
+
+
+
+// updates Navbar Layout at browser width 830px
+export function updateNavbarLayout(e){
+
+  switch(e.matches){
+
+    case true: 
+      [NB_MENUBAR, NB_MENUBTN].forEach(el => el.classList.add("d-none"))
+      SECONDLAYER.appendChild(NAVBAR_SEARCHBAR)
+      break;
+        
+    case false:
+      [NB_MENUBAR, NB_MENUBTN].forEach(el => el.classList.remove("d-none"))
+      FIRSTLAYER.insertBefore(NAVBAR_SEARCHBAR, CUBE_CONTAINER)
+      break;
+    }
+}
+
+
+
+
+
+export function movePwUp(){
+  pwLabel.classList.add("moveLabelUp");
+}
+
+export function movePwDown(){
+  if (passwordInput.value == ""){
+    pwLabel.classList.remove("moveLabelUp");
+  }
 
 }
+
+export function moveEmailUp(){
+  emailLabel.classList.add("moveLabelUp");
+}
+
+export function moveEmailDown(){
+  if (emailInput.value == ""){
+    emailLabel.classList.remove("moveLabelUp");
+  }
+
+}
+
+
 
 // Help
 
 function toggleEye(pwEye){
+
   if(pwEye.classList.contains("fa-eye")){
     pwEye.classList.remove("fa-eye");
     pwEye.classList.add("fa-eye-slash");
   }
+
   else{
     pwEye.classList.remove("fa-eye-slash");
     pwEye.classList.add("fa-eye");
@@ -401,8 +371,7 @@ function toggleEye(pwEye){
 }
 
 
-// toggles Password Visibility at loginSlide password input
-
+// click on eye changes eye icon and the visibility of the password
 export function togglePwd(){
 
   // toggle text visibility
@@ -413,6 +382,3 @@ export function togglePwd(){
   toggleEye(PWD_EYE);
   
 }
-
-
-
