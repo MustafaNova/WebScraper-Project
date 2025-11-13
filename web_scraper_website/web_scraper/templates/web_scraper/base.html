@@ -18,10 +18,9 @@
   
 </head>
 <body style="background-color: rgb(236, 235, 235);display:flex;justify-content:center;flex-direction:column">
-
   <!-- with adding 'activated' the browser will get black (used when opening menus)-->
   <div class="overlay"></div>
-
+  
   <!--NavBar-->
   <div class="navBarColor">
 
@@ -241,8 +240,9 @@
     </div>
 
   </div>
-    
-    <!--FilterMenu-->
+  
+  
+  <!--FilterMenu-->
   <div id="filterMenu">
     <div class="standardSlide introSlide" id="slideInStandard">
       
@@ -1045,8 +1045,10 @@
 
   <!--Content-->
   <div class="main" id="mainContent">
-    {% block content %}
-    {% endblock content %}
+    <div class="produkteDiv" id="productsContainer" style="opacity: 1;">
+      {% block content %}
+      {% endblock content %}
+    </div>
   </div>
 
 
@@ -1055,8 +1057,7 @@
     Artikel wurde in den Warenkorb gelegt
   </div>
 
-
-<script type="module" src="{% static 'web_scraper/js/modules/mainPage.js' %}"></script>
+  <script type="module" src="{% static 'web_scraper/js/modules/mainPage.js' %}"></script>
     
 </body>
 </html>

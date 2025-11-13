@@ -1960,6 +1960,7 @@ but last one shouldnt have it*/
   box-shadow: 0 10px 20px 1px rgb(0, 0, 0, 0.2);
   z-index: 1000;
   opacity: 0;
+  pointer-events: none;
   transition: all 0.3s ease;
   transform: translateY(20px);
 }

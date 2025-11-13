@@ -585,6 +585,14 @@ html{
 }
 
 
+/*if filter-menus are open, they are seen too much, so it has to be unvisible*/
+body:has(.openSlide) .rightArr::after{
+  opacity: 0;
+}
+
+body:has(.openSlide) .leftArr::after{
+  opacity: 0;
+}
 
 
 

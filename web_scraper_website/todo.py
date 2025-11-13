@@ -16,8 +16,13 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-    # click auf alle löschen django website geht net, testen ob alles klappt
-    # wenn searchbar eingibt produkt, soll ganz normal ohne filter danach suchen und die informationen in die produktboxen einfügen, und filter-btn wie saturn über produkten anzeigen
+    # ein angular mini-projekt zum lernen machen, (angular tutorial für anfänger min.44)
+    # Angular, alle html,css,js dateien in angular komponenten machen
+    # django hot reload einstellen ohne das komplett seite neu lädt
+    # (mit angular daran arbeiten)bei Märkte chosenBoxen namen werden nicht reingeschrieben, functions.js z.679 ist content variable leer
+    # wenn märkte/marken CM resize gröser ist und chosenBox kreuz clicked, dann bleibt CM so gros, wird nicht geschlossen
+    # CM boxen unten mehr abstand
+    # (django soll daten an frontend senden und in react-frontend sollen die daten in html eingefügt werden)wenn searchbar eingibt produkt, soll ganz normal ohne filter danach suchen und die informationen in die produktboxen einfügen, und filter-btn wie saturn über produkten anzeigen nach suche,davor nicht anzeigen
     # wenn kein bild gescrapt, dann erst 'kein Bild verfügbar' anzeigen
     # website.js in js ordner was das, bessere name, das in modules reintun wenn klappt, und in variables und functions unterteilen
     # erst nachdem produkt in searchbar eingegeben hat, soll filtermenu anzeigen, wenn dann filter auswählt und submit clicked, soll produkte mit diese filter scrapen

@@ -37,7 +37,8 @@
   --chosenMarkets-selectionsB-min-resize: 105px;
   --chosenMarkets-selectionsB-max-resize: 158px;
   --chosenMarkets-selections-min-resize: 100px;
-  --scrollbar-width: 7px;
+  --market-scrollbar-width: 7px;
+  --window-scrollbar-width: 15px;
   --scrollbar-background-color: #d1d5db;
   --scrollbar-border-radius: 5px;
   --scrollbar-hover-color: #9b9fa3;
@@ -1120,7 +1121,7 @@ background-color:rgba(230, 179, 179, 0.84);
 
 .market-selection::-webkit-scrollbar,
 .marken-selection::-webkit-scrollbar{
-  width: var(--scrollbar-width);
+  width: var(--market-scrollbar-width);
 }
 
 .market-selection::-webkit-scrollbar-thumb,
@@ -1917,10 +1918,14 @@ but last one shouldnt have it*/
 
 .produkteDiv{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, 330px);
+  column-gap: 10px;
+  row-gap: 50px;
+  justify-items: center;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1320px;
+  width: 1350px;
   position: relative;
 }
 
@@ -1929,7 +1934,7 @@ but last one shouldnt have it*/
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 330px;
+  width: 310px;
   height: 470px;
   box-shadow: 0 20px 40px rgb(0, 0, 0, 0.08);
   border-radius: 18px;
@@ -2123,7 +2128,7 @@ but last one shouldnt have it*/
   color: var(--muted);
   font-weight: 600;
   position: absolute;
-  left: 92px;
+  left: 80px;
   top: 95px;
 }
 
@@ -2131,17 +2136,17 @@ but last one shouldnt have it*/
 
 
 .main{
-  margin-top: 10px;
+  margin-top: 60px;
   width: 102%;
   display: flex;
   justify-content: center;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 30px;
+  padding-right: calc(30px + var(--window-scrollbar-width)); /*15px für scrollbar width*/
 }
 
 
 .adjustPR_main{
-  padding-right: 65.5px;
+  padding-right: 60px;
 
 } 
 
@@ -2151,11 +2156,11 @@ but last one shouldnt have it*/
   
  .main{
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: var(--window-scrollbar-width);
  }
 
  .adjustPR_main{
-  padding-right: 15.5px;
+  padding-right: 30px;
  }
 }
 
@@ -2443,7 +2448,7 @@ but last one shouldnt have it*/
 
 .chosenMarkets-selections::-webkit-scrollbar,
 .chosenMarken-selections::-webkit-scrollbar{
-  width: var(--scrollbar-width);
+  width: var(--market-scrollbar-width);
 }
 
 .chosenMarkets-selections::-webkit-scrollbar-thumb,
