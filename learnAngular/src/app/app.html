@@ -1,3 +1,15 @@
-<div class="card">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit consectetur voluptatum maxime repellendus dolorum accusantium repellat! Omnis debitis nam quam aut nobis, ea tempora perferendis, obcaecati, fuga quidem culpa expedita?
+
+<div class="box">
+  <div class="container">
+    <div style="height: 50px;display:flex;justify-content:center;align-items:center">Unsere Todos</div>
+    <button class="addToDo" (click)="addToDo()">add ToDo</button>
+    <input type="text" style="margin-left:5px" [(ngModel)]="newToDo">
+    <div>
+      <div *ngFor="let todo of todos; let i = index; let isFirst = first; let isLast = last">
+        <app-todo [todo]="todo" [index]="i" [isFirst]="isFirst" [isLast]="isLast" (todoIndex)="toggleToDo($event)" (deleteIndex)="deleteToDo($event)"></app-todo>
+      </div>
+    
+    </div>
+  </div>
+
 </div>

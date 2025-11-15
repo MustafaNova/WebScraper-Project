@@ -1,8 +1,17 @@
-.test{
-    background-color: green;
-    height: 50px;
-    border-radius: 20px;
+.box{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container{
+    background-color: rgb(206, 202, 202);
+}
+
+.addToDo{
+    z-index: 1000;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }

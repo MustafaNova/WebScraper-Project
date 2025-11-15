@@ -1,0 +1,7 @@
+<div class="todo" [ngClass]="{green : todo.done, red: !todo.done}">
+    <span>{{index}}</span>
+    <span class="todo-text" (click)="toggleToDo()">{{todo.todo | uppercase}}</span>
+    <span *ngIf="isFirst">FIRST</span>
+    <span *ngIf="isLast">LAST</span>
+    <button class="todo-btn" (click)="deleteToDo()"> Delete todo</button>
+</div>
