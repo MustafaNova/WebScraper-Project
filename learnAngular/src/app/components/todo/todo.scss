@@ -18,8 +18,11 @@
     border-radius: 10px;
     border: none;
     height: 30px;
- 
+    font-weight: 600;
+    cursor: pointer;
 }
+
+.todo-btn:hover{background-color: rgb(226, 224, 224);}
 
 .red{
     background-color: red;
@@ -27,4 +30,20 @@
 
 .green{
     background-color: green;
+}
+
+.toggleToDo{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+.toggleToDo:hover{background-color: rgb(226, 224, 224);}
+
+.actions{
+    display: flex;
+    gap: 7px;
 }

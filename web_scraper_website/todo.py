@@ -16,8 +16,11 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-    # ein angular mini-projekt zum lernen machen, (angular tutorial für anfänger min.44)
-    # Angular, alle html,css,js dateien in angular komponenten machen
+    # in angular http request an django backend server schicken, alle methoden in angular als service implementieren
+    # save data in datenbank speichern(vorherige todos löschen,immer nur eins vorhanden), get data von datenbank todos rausholen
+    # button, mit dem todos in datenbank speichern kann mit django als backend mit rest-api, wohin angular Anfrage schickt, und button, womit an diese daten aus datenbank abrufen kann
+    # routing angular dazu todo etwas einbauen chatgpt idee fragen
+    # Angular, alle html,css,js dateien von webscraper in angular komponenten machen
     # django hot reload einstellen ohne das komplett seite neu lädt
     # (mit angular daran arbeiten)bei Märkte chosenBoxen namen werden nicht reingeschrieben, functions.js z.679 ist content variable leer
     # wenn märkte/marken CM resize gröser ist und chosenBox kreuz clicked, dann bleibt CM so gros, wird nicht geschlossen

@@ -16,13 +16,14 @@
 <div class="box">
   <div class="container">
     <div style="height: 50px;display:flex;justify-content:center;align-items:center">Unsere Todos, Offen: {{countOpenToDos().length}}</div>
+    <button class="saveData">save data</button>
+    <button class="getData">get data</button>
     <button class="addToDo" (click)="addToDo()">add ToDo</button>
-    <input type="text" style="margin-left:5px" [(ngModel)]="newToDo">
+    <input type="text" class="newToDo" [(ngModel)]="newToDo">
     <div>
       <div *ngFor="let todo of todos; let i = index; let isFirst = first; let isLast = last">
         <app-todo [todo]="todo" [index]="i" [isFirst]="isFirst" [isLast]="isLast" (todoIndex)="toggleToDo($event)" (deleteIndex)="deleteToDo($event)"></app-todo>
-      </div>
-    
+      </div>  
     </div>
   </div>
 
