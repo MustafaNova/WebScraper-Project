@@ -207,11 +207,8 @@ export function moveMenubarRight(){
     add_OVERFLOWLEFT(-LEFTMOVE_DEFAULT)
 
     showMenuBarArr("right");
-
-    
-  }
   
-
+  }
   
 }
 
