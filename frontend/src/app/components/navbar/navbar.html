@@ -123,10 +123,10 @@
             <div class="Outer" id="NB_menubar">
         
                 <!--left Arrow-->
-                <i class="fa-solid fa-angle-left leftArr unvisible noPointer" #menubar (click)="moveMenubarRight()" id="leftArr"></i>
+                <i class="fa-solid fa-angle-left leftArr unvisible noPointer" (click)="moveMenubarRight()" #leftArr id="leftArr"></i>
 
                 <div class="Outermenubar">
-                <ul class="menubar" role="menubar">
+                <ul class="menubar" #menubar role="menubar">
                     <li class="menubarFI item">Computer + Tablet</li> <!--menubar-first-item-->
                     <li class="item">Smartphones</li>
                     <li class="item">TV + Beamer</li>
@@ -144,7 +144,7 @@
                 </div>
 
                 <!--right Arrow-->
-                <i class="fa-solid fa-angle-right rightArr visible" id="rightArr"></i>
+                <i class="fa-solid fa-angle-right rightArr visible" #rightArr id="rightArr"></i>
             </div>  
 
             </div>
