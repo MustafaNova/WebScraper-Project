@@ -689,3 +689,11 @@ body:has(.openSlide) .leftArr::after{
 }
 
 
+
+.unvisible{
+  opacity: 0;
+}
+
+.noPointer{
+  pointer-events: none;
+}

@@ -151,8 +151,7 @@ function hideMenuBarArr(arrow){
 
 export function moveMenubarLeft(){
 
-
-  // calculate overflow on right side
+  // calculate overflow on right side 
   const OutermenubarWidth = OUTERMENUBAR.clientWidth;
 
   const overflow = MENUBARWIDTH - OutermenubarWidth - OVERFLOWLEFT;

@@ -4,7 +4,7 @@
         <div style="width:98%">
         
             <!--First Layer-->
-            <div class="firstLayer">
+            <div class="firstLayer" #firstLayer>
 
             <i class="fa-solid fa-bars smallScreenBars"></i>
 
@@ -12,7 +12,7 @@
             <img class="navBarLogo" src="https://cms-images.mmst.eu/fw7ws5lvie5f/57IGhBCsgc3X02EX1EFqyN/e7d3e1b61d0a29d5e84290660e0d10df/MMS_Logo_outline.svg?q=80" alt="">
             
             <!--Searchbar-->
-            <div class="navBar_searchbar">
+            <div class="navBar_searchbar" #navBar_searchbar>
 
                 <!--Input-->
                 <i class="fa-solid fa-magnifying-glass cursorPointer"></i>
@@ -26,7 +26,7 @@
 
 
             <!--rotating-Box-->
-            <div class="cube-container">
+            <div class="cube-container" #cube_container>
 
                 <!--All Options -->
                 <div class="cube">
@@ -109,10 +109,10 @@
             </div>
 
             <!--Second Layer-->
-            <div class="secondLayer">
+            <div class="secondLayer" #secondLayer>
         
             <!--menuBtn-->
-            <div class="OuternavBarMenu" id="NB_menuBtn">
+            <div class="OuternavBarMenu" #NB_menuBtn id="NB_menuBtn">
                 <div class="navBarMenu">
                 <i class="fa-solid fa-bars barsImage"></i>
                 <span style="font-weight: 700; color: rgb(58, 58, 58)">Menü</span>
@@ -120,12 +120,12 @@
             </div>
             
             <!--menubar-->    
-            <div class="Outer" id="NB_menubar">
+            <div class="Outer" #NB_menubar id="NB_menubar">
         
                 <!--left Arrow-->
                 <i class="fa-solid fa-angle-left leftArr unvisible noPointer" (click)="moveMenubarRight()" #leftArr id="leftArr"></i>
 
-                <div class="Outermenubar">
+                <div class="Outermenubar" #outermenubar>
                 <ul class="menubar" #menubar role="menubar">
                     <li class="menubarFI item">Computer + Tablet</li> <!--menubar-first-item-->
                     <li class="item">Smartphones</li>
@@ -144,7 +144,7 @@
                 </div>
 
                 <!--right Arrow-->
-                <i class="fa-solid fa-angle-right rightArr visible" #rightArr id="rightArr"></i>
+                <i class="fa-solid fa-angle-right rightArr visible" #rightArr (click)="moveMenubarLeft()" id="rightArr"></i>
             </div>  
 
             </div>

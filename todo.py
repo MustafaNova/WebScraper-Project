@@ -16,7 +16,10 @@
   # obige leiste von saturnseite nachmachen(index.html):
    # wenn registriert soll in datenbank user info speichern(password soll hashen):
     
-    # navbar.ts mit renderer2 und viewchild auf MENUBAR zugreifen und functions.js (moveMenubarRight) ausführen
+    # expandMenubarToRight bei window handling listenerRegistration auch einbauen, mit HostListener
+    # saturn logo zu weit oben, mehr nach unten verschieben
+    # account-btn click soll slide öffnen, wenn auf registrieren clicked, soll von newDesignHtml Ordner registration html anzeigen
+    # website hat vertikal scroll, django base template schauen muss wahrscheinlich global das ändern
     # listenerRegistration menubar beide listener angular einbauen
     # accountslide öffnen bei btn click
     # box welches sich dreht listener falls vorhanden und css datei auskommentierte stelle wieder kommentar weg machen und testen obs klappt
